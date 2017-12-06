@@ -1,40 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Landing Page - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/resources/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="/resources/css/landing-page.min.css" rel="stylesheet">
-    <link href="/resources/css/styles.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <a class="btn btn-primary" href="#">Sign In</a>
-    </div>
-</nav>
-
+<%@include file="home_header.jsp"%>
 <!-- Masthead -->
 <header class="masthead text-white text-center">
     <div class="overlay"></div>
@@ -65,7 +31,7 @@
         <div class="row">
             <c:forEach var="alc" items="${alcogol}">
                 <div class="col-lg-4 prod-block mt-20">
-                        <h2 class="text-center">${alc.name}</h2>
+                        <h2 class="text-center"><a href="/viewProduct/${alc.id}">${alc.name}</a></h2>
                         <div class="prod-img"></div>
                         <div class="row">
                             <span class="d-inline-block col-xs-6 col-md-6  text-center">
@@ -164,60 +130,7 @@
         </div>
     </div>
 </section>
+<%@include file="footer.jsp"%>
 
-<!-- Footer -->
-<footer class="footer bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6  text-center text-lg-left my-auto">
-                <ul class="list-inline mb-2">
-                    <li class="list-inline-item">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
-                    <li class="list-inline-item">
-                        <a href="#">Contact</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
-                    <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
-                    <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                </ul>
-                <p class="text-muted small mb-4 mb-lg-0">&copy; Start Bootstrap 2017. All Rights Reserved.</p>
-            </div>
-            <div class="col-lg-6  text-center text-lg-right my-auto">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item mr-3">
-                        <a href="#">
-                            <i class="fa fa-facebook fa-2x fa-fw"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item mr-3">
-                        <a href="#">
-                            <i class="fa fa-twitter fa-2x fa-fw"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-instagram fa-2x fa-fw"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="/resources/vendor/jquery/jquery.min.js"></script>
-<script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
 
 

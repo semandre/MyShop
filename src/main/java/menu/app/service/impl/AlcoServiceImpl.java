@@ -24,4 +24,8 @@ public class AlcoServiceImpl implements AlcoService {
         return alcoDao.findAll();
     }
 
+    @Override
+    public Alcogol find(int id) {
+        return alcoDao.findOne(id);
+    }
 }
