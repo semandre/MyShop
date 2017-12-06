@@ -20,16 +20,15 @@ public class AlcoController {
     @PostMapping("/createAlc")
     public String createAlc(@RequestParam String name,
                             @RequestParam String category,
-                            @RequestParam int price){
+                            @RequestParam double price,
+                            @RequestParam String description,
+                            @RequestParam int stock,
+                            @RequestParam String status){
 
-        Alcogol alcogol = new Alcogol(name,category,price);
+        Alcogol alcogol = new Alcogol(name,category,price,description,stock,status);
         alcoService.save(alcogol);
-        return "redirect:/main";
+        return "redirect:/";
     }
 
-    @GetMapping("/main")
-    public String getAlc(){
-        return "main";
-    }
 
 }

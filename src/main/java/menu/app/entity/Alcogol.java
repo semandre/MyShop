@@ -13,15 +13,21 @@ public class Alcogol {
 
     private String name;
     private String category;
-    private int price;
+    private double price;
+    private String description;
+    private int stock;
+    private String status;
 
-    public Alcogol(String name, String category, int price) {
+    public Alcogol() {
+    }
+
+    public Alcogol(String name, String category, double price, String description, int stock, String status) {
         this.name = name;
         this.category = category;
         this.price = price;
-    }
-
-    public Alcogol() {
+        this.description = description;
+        this.stock = stock;
+        this.status = status;
     }
 
     public int getId() {
@@ -48,12 +54,36 @@ public class Alcogol {
         this.category = category;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -63,6 +93,9 @@ public class Alcogol {
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", price=" + price +
+                ", description='" + description + '\'' +
+                ", stock=" + stock +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

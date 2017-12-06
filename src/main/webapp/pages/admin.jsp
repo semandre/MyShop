@@ -12,9 +12,22 @@
 </head>
 <body>
 <form action="/createAlc" method="post">
-    <input type="text" name="name">
-    <input type="text" name="category">
-    <input type="number" name="price">
+    Ім'я <input type="text" name="name"><br>
+    Категорія
+    <select name="category">
+        <option value="vodka">Vodka</option>
+        <option value="beer">Beer</option>
+        <option value="vine">Wine</option>
+    </select><br>
+    Ціна
+    <input type="text" name="price"><br>
+    опис
+    <textarea name="description"  cols="30" rows="10"></textarea><br>
+    Кількість
+    <input type="text" name="stock"><br>
+    Статус
+    <input type="radio" name="status" value="enabled">
+    <input type="radio" name="status" value="disabled"><br>
     <input type="submit" value="add">
 </form>
 </body>

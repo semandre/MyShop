@@ -17,6 +17,7 @@
         ${alc.name}
         ${alc.category}
         ${alc.price}
+        ${alc.description}
     </div>
 </c:forEach>
 </body>
