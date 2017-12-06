@@ -64,7 +64,7 @@
     <div class="container">
         <div class="row">
             <c:forEach var="alc" items="${alcogol}">
-                <div class="col-lg-4 prod-block">
+                <div class="col-lg-4 prod-block mt-20">
                         <h2 class="text-center">${alc.name}</h2>
                         <div class="prod-img"></div>
                         <div class="row">
