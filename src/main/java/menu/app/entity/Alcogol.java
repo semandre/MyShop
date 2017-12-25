@@ -18,6 +18,8 @@ public class Alcogol {
     private int stock;
     private String status;
 
+    private String pic;
+
     public Alcogol() {
     }
 
@@ -84,6 +86,14 @@ public class Alcogol {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     @Override

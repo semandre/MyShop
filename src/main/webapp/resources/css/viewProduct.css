@@ -1,0 +1,48 @@
+.headName{
+    padding-bottom:10px ;
+    color: #444444;
+}
+.borDs{
+    border-bottom: 2px #EEEEEE dashed;
+}
+.mb-0{
+    margin-bottom: 0px;
+}
+.priceBlock{
+
+    margin-top: 10px;
+    background: #F15A23;
+    display: inline-block;
+    height: 48px;
+    padding: 0 18px 0 32px;
+    border-radius: 50px 3px 3px 50px;
+    -moz-border-radius:  50px 3px 3px 50px;
+    -webkit-border-radius:  50px 3px 3px 50px;
+    line-height: 48px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+}
+.text-orange{
+    color: #F15A23;
+}
+.positioner{
+    margin-right: 300px;
+}
+.priceText{
+    font-weight:bold;
+    font-size:31px;
+    padding-right: 20px;
+}
+.describer{
+
+    font-size: 40px;
+    color: #444444;
+}
+.desriberText{
+    font-family:"Segoe UI";
+    color: #444444;
+}
+.same{
+    border: 2px solid #EEEEEE;
+}

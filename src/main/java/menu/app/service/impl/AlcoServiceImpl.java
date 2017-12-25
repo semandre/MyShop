@@ -28,4 +28,9 @@ public class AlcoServiceImpl implements AlcoService {
     public Alcogol find(int id) {
         return alcoDao.findOne(id);
     }
+
+    @Override
+    public List<Alcogol> findAlcogolByCategory(String category) {
+        return alcoDao.findAlcogolByCategory(category);
+    }
 }

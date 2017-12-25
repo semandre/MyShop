@@ -37,9 +37,9 @@ public class DataConfig {
         hikariConfig.addDataSourceProperty("dataSource.prepStmtCacheSqlLimit", "2048");
         hikariConfig.addDataSourceProperty("dataSource.useServerPrepStmts", "true");
 
-        HikariDataSource dataSource = new HikariDataSource(hikariConfig);
+    HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         return dataSource;
-    }
+}
     @Bean
     public JpaVendorAdapter vendorAdapter(){
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

@@ -9,5 +9,5 @@ public interface AlcoService {
     void save(Alcogol alcogol);
     List<Alcogol> findAll();
     Alcogol find(int id);
-
+    public List<Alcogol> findAlcogolByCategory(String category);
 }

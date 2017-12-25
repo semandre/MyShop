@@ -5,9 +5,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 
 public class WebInit implements WebApplicationInitializer {
     @Override
@@ -16,14 +14,15 @@ public class WebInit implements WebApplicationInitializer {
         context.register(WebConfig.class);
         DispatcherServlet dispatcherServlet = new DispatcherServlet(context);
         ServletRegistration.Dynamic registration = servletContext
-                .addServlet("dispatcherServlet",dispatcherServlet);
+                .addServlet("dispatcherServlet", dispatcherServlet);
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
+        registration.setMultipartConfig(new MultipartConfigElement("",1000000,1000000,1000000));
 
 
+        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter("UTF-8", true);
+        FilterRegistration.Dynamic characterEncodingFilter = servletContext.addFilter("characterEncodingFilter", encodingFilter);
+        characterEncodingFilter.addMappingForUrlPatterns(null,true,"/*");
 
-        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-        encodingFilter.setEncoding("utf-8");
-        encodingFilter.setForceEncoding(true);
     }
 }
