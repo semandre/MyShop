@@ -21,10 +21,6 @@
         </div>
 
 
-
-
-
-
         <!-- Items List -->
 
         <div class="container">

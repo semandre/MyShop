@@ -25,12 +25,12 @@
                         <td>${item.name}</td>
                         <td>${item.price}</td>
                         <td>
-                            <input type="number"  id="quantity_${item.id}" value="${item.quantity}" style="width: 30px"/>
+                            <input type="number"  value="${item.quantity}" name="quantity" style="width: 50px"/>
                         </td>
                         <td>${item.price.longValue()*item.quantity}</td>
                         <td>
                             <a href="/remove/${item.id}" class=" btn btn-danger addToCartBtn">Видалити</a>
-                            <a href="/update/${item.id}" class=" btn btn-success addToCartBtn">Оновити</a>
+                            <a href="/update/${item.name}" class=" btn btn-success addToCartBtn">Оновити</a>
                         </td>
                     </tr>
                 </c:forEach>

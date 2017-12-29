@@ -10,4 +10,5 @@ public interface AlcoService {
     List<Alcogol> findAll();
     Alcogol find(int id);
     public List<Alcogol> findAlcogolByCategory(String category);
+
 }

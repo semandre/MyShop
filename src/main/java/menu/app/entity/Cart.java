@@ -1,10 +1,19 @@
-package menu.model;
+package menu.app.entity;
 
 
 import menu.app.entity.Alcogol;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Cart {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String sessionId;
     private String name;
     private double price;
     private int quantity;
@@ -13,8 +22,9 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(int id, String name, double price, int quantity) {
-        this.id = id;
+
+    public Cart(String sessionId, String name, double price, int quantity) {
+        this.sessionId = sessionId;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -52,8 +62,15 @@ public class Cart {
         this.quantity = quantity;
     }
 
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
     public void toCart(Alcogol alcogol){
-        this.id=alcogol.getId();
         this.name=alcogol.getName();
         this.price=alcogol.getPrice();
         this.quantity=1;

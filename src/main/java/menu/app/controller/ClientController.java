@@ -2,13 +2,8 @@ package menu.app.controller;
 
 import menu.app.entity.Client;
 import menu.app.service.ClientService;
-import menu.model.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @RestController
 public class ClientController {
