@@ -5,7 +5,6 @@ import menu.app.service.AlcoService;
 import menu.app.entity.Cart;
 import menu.app.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -24,38 +23,19 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @GetMapping("/cart")
-    public String cart(Model model, HttpSession session) {
-        model.addAttribute("listCart",cartService.findAllBySessionId(session.getId()));
-//        model.addAttribute("listCart", (List<Cart>) session.getAttribute("cart"));
-//        System.out.println(session.getId());
 
-        return "cart";
-    }
 
     @GetMapping("/add/{id}")
     @Transactional
     public String addCart(@PathVariable int id, HttpSession session, Model model) {
-        boolean b= true;
-//        Cart cart = new Cart();
+        boolean b = true;
         Alcogol alcogol = alcoService.find(id);
-//        List<Cart> list = (List<Cart>) session.getAttribute("cart");
-//
-//        if (list == null) {
-//            list = new ArrayList<Cart>();
-//        }
-//
-//        if (alcogol != null) {
-//            cart.toCart(alcogol);
-//
-//            session.setAttribute("cart", list);
-//
-//        }
+
         List<Cart> cartTab =cartService.findAllBySessionId(session.getId());
         for (Cart cart1 : cartTab) {
             if (cart1.getName().equals(alcogol.getName())){
                 int quantity=cart1.getQuantity()+1;
-                cartService.update(alcogol.getName(),quantity);
+                cartService.update(cart1.getSessionId(),alcogol.getName(),quantity);
                 b=false;
             }
         }
@@ -69,15 +49,13 @@ public class CartController {
 
         session.setAttribute("cart",cartTab);
         model.addAttribute("listCart", cartTab);
-        return "redirect:/";
+        System.out.println(cartTab);
+        return "redirect:/" ;
     }
 
     @GetMapping("/remove/{id}")
     public String removeCart(@PathVariable int id, HttpSession session, Model model) {
-//        List<Cart> list = (List<Cart>) session.getAttribute("cart");
-//        if (list != null) {
 
-//        }
         List<Cart> cartList = cartService.findAllBySessionId(session.getId());
         for (Cart cart : cartList) {
             if (cart.getId()==(id)){
@@ -90,32 +68,56 @@ public class CartController {
         model.addAttribute("listCart", cartList);
         session.setAttribute("cart", cartList);
 
-        return "cart";
+        return "redirect:/cart";
     }
 
-    @GetMapping("/update/{name}/{}")
-    public String updateCart(@PathVariable String name,
-                             @RequestParam int quantity,
-                             HttpSession session,
-                             Model model) {
+    @GetMapping("/update/{id}")
+    @Transactional
+    public
+    String updateCart(@PathVariable int id,
+                      HttpSession session,
+                      Model model) {
 
-//        List<Cart> list = (List<Cart>) session.getAttribute("cart");
-//        if (list != null) {
-//
-//        }
-//
         List<Cart> cartList =cartService.findAllBySessionId(session.getId());
         for (Cart cart : cartList) {
-            if (cart.getName().equals(name)){
-                cartService.update(name, quantity);
+            if (cart.getId()==(id)){
+                int quantity=cart.getQuantity()+1;
+                System.out.println(cart.getSessionId());
+                System.out.println(cart.getName());
+                System.out.println(cart.getQuantity());
+                cartService.update(cart.getSessionId(), cart.getName(),quantity );
             }
         }
-
-        double total = updateCartItem(cartList, name, quantity);
-        model.addAttribute("total", total);
+//        model.addAttribute("total", total);
         session.setAttribute("cart", cartList);
         model.addAttribute("listCart", cartList);
-        return "cart";
+        return "redirect:/cart";
+    }
+
+    @GetMapping("/decrement/{id}")
+    @Transactional
+    public String decrementCart(@PathVariable int id,
+                                HttpSession session,
+                                Model model) {
+        List<Cart> cartList = cartService.findAllBySessionId(session.getId());
+        for (Cart cart : cartList) {
+            if (cart.getId() == (id)) {
+
+                int quantity = cart.getQuantity() - 1;
+                if (quantity==0){
+                    quantity=1;
+                }
+                System.out.println(cart.getSessionId());
+                System.out.println(cart.getName());
+                System.out.println(cart.getQuantity());
+                cartService.update(cart.getSessionId(), cart.getName(), quantity);
+
+            }
+        }
+//        model.addAttribute("total", total);
+        session.setAttribute("cart", cartList);
+        model.addAttribute("listCart", cartList);
+        return "redirect:/cart";
     }
 //
 //     FUNCTIONS
@@ -158,18 +160,7 @@ public class CartController {
     }
 
 
-    private double updateCartItem(List<Cart> list, String name, int quantity) {
-        double total = 0;
-        for (Cart c : list) {
-            if (c.getName() == (name)) {
-                c.setQuantity(quantity);
-            }
 
-            total = total + c.getPrice() * c.getQuantity();
-        }
-
-        return total;
-    }
 
 
 }

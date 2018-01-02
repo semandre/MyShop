@@ -3,10 +3,7 @@ package menu.app.entity;
 
 import menu.app.entity.Alcogol;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Cart {
@@ -17,6 +14,9 @@ public class Cart {
     private String name;
     private double price;
     private int quantity;
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private Client client;
 
 
     public Cart() {
@@ -70,9 +70,23 @@ public class Cart {
         this.sessionId = sessionId;
     }
 
-    public void toCart(Alcogol alcogol){
-        this.name=alcogol.getName();
-        this.price=alcogol.getPrice();
-        this.quantity=1;
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", sessionId='" + sessionId + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", client=" + client +
+                '}';
     }
 }

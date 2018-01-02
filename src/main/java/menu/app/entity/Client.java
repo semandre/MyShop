@@ -1,6 +1,8 @@
 package menu.app.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Client {
@@ -8,17 +10,22 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String sessionId;
     private String name;
     private String lastName;
     private String address;
     private int number;
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
+    private List <Cart> cartList=new ArrayList<>();
 
 
 
     public Client() {
     }
 
-    public Client(String name, String lastName, String address, int number) {
+    public Client(String sessionId,String name, String lastName, String address, int number) {
+        this.sessionId=sessionId;
         this.name = name;
         this.lastName = lastName;
         this.address = address;

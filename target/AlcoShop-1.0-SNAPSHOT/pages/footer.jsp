@@ -23,6 +23,7 @@
 <script src="/resources/js/new-age.min.js"></script>
 <script src="/resources/js/jquery.cbpFWSlider.min.js"></script>
 <script src="/resources/js/dropdown.js"></script>
+<script src="/resources/js/AjaxCart.js"></script>
 <script>
     $( function() {
         /*

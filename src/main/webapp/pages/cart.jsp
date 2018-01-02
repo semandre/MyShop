@@ -11,30 +11,31 @@
 
     <div class="white container hg-100 wd-100 mtr-10">
         <div class="container">
-            <table class="table  ml-5 mt-100">
-                <tr>
-                    <th>Назва продукту</th>
-                    <th>Ціна</th>
-                    <th>Кількість</th>
-                    <c:if test="${total!=0}">
-                        <th>До оплати: ${total} грн</th>
-                    </c:if>
-                </tr>
-                <c:forEach items="${listCart}" var="item">
+            <div id="cart">
+                <table class="table  ml-5 mt-100" >
                     <tr>
-                        <td>${item.name}</td>
-                        <td>${item.price}</td>
-                        <td>
-                            <input type="number"  value="${item.quantity}" name="quantity" style="width: 50px"/>
-                        </td>
-                        <td>${item.price.longValue()*item.quantity}</td>
-                        <td>
-                            <a href="/remove/${item.id}" class=" btn btn-danger addToCartBtn">Видалити</a>
-                            <a href="/update/${item.name}" class=" btn btn-success addToCartBtn">Оновити</a>
-                        </td>
+                        <th>Назва продукту</th>
+                        <th>Ціна</th>
+                        <th>Кількість</th>
+                        <th>До оплати: ${total} грн</th>
                     </tr>
-                </c:forEach>
-            </table>
+                    <c:forEach items="${listCart}" var="item">
+                        <tr>
+                            <td name="name" id="name">${item.name}</td>
+                            <td>${item.price}</td>
+                            <td>
+                                <input type="number"  value="${item.quantity}" id="quantity" name="quantity" disabled style="width: 50px"/>
+                            </td>
+                            <td>${item.price.longValue()*item.quantity}</td>
+                            <td>
+                                <a href="/remove/${item.id}" class=" btn btn-danger addToCartBtn">Видалити</a>
+                                <a href="/update/${item.id}" class=" btn btn-success addToCartBtn" >+</a>
+                                <a href="/decrement/${item.id}" class=" btn btn-success addToCartBtn" >-</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
             <br>
             <a href="/" class="btn btn-success addToCartBtn">До товару</a>
         </div>
@@ -54,8 +55,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 <%@include file="footer.jsp"%>
