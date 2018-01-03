@@ -9,6 +9,5 @@ import java.util.List;
 
 public interface ClientDAO extends JpaRepository<Client,Integer> {
 
-    @Query("from Cart c join Client cl")
-    List<Cart> findByClient();
+
 }

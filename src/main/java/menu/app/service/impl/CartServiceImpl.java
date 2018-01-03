@@ -48,5 +48,9 @@ public class CartServiceImpl implements CartService {
         return cartDao.findAllBySessionId(sessionId);
     }
 
+    @Override
+    public List<Cart> findByClient() {
+        return cartDao.findByClient();
+    }
 
 }

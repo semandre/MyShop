@@ -13,4 +13,5 @@ public interface CartService {
     void updateAll(Client client,String sessionId);
     void updateSessionId(String sessionId ,Client client);
     List<Cart> findAllBySessionId(String sessionId);
+    List<Cart> findByClient();
 }

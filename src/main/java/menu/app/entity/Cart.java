@@ -15,7 +15,7 @@ public class Cart {
     private double price;
     private int quantity;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Client client;
 
 

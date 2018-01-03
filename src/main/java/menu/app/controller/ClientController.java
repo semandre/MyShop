@@ -49,8 +49,8 @@ public class ClientController {
     @GetMapping("/showOrders")
     public String showOrders(Model model)
     {
-        model.addAttribute("orders",clientService.findByClient());
-        return "redirect:/admin";
+        model.addAttribute("orders",cartService.findByClient());
+        return "/admin";
     }
 
 

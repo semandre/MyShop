@@ -16,7 +16,7 @@ public class Client {
     private String address;
     private int number;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "client")
     private List <Cart> cartList=new ArrayList<>();
 
 

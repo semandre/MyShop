@@ -26,4 +26,9 @@ public interface CartDao extends JpaRepository<Cart,Integer> {
     @Query("from Cart c where c.sessionId=:sessionId")
     List<Cart> findAllBySessionId(@Param("sessionId") String sessionId);
 
+    @Query("from Cart as c  join fetch c.client as cl ")
+    List<Cart> findByClient();
+
+
+
 }

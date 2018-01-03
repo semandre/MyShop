@@ -35,9 +35,7 @@
 <br>
 <a href="/showOrders">Показати замовлення</a>
 <c:forEach items="${orders}" var="order">
-    <p>${order.id}</p>
-    <p>${order.client}</p>
-    <p>${order.name}</p>
+    <p>${order}</p>
 </c:forEach>
 </body>
 </html>
