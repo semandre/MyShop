@@ -30,7 +30,12 @@ public class AlcoServiceImpl implements AlcoService {
     }
 
     @Override
-    public List<Alcogol> findAlcogolByCategory(String category) {
-        return alcoDao.findAlcogolByCategory(category);
+    public List<Alcogol> findAlcogolByCategory(int id) {
+        return alcoDao.findAlcogolByCategory(id);
+    }
+
+    @Override
+    public Alcogol findAllWithCategory( int id) {
+        return alcoDao.findAllWithCategory(id);
     }
 }

@@ -7,35 +7,25 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<form action="/createAlc" method="post" enctype="multipart/form-data">
-    Ім'я <input type="text" name="name"><br>
-    Категорія
-    <select name="category">
-        <option value="vodka">Vodka</option>
-        <option value="beer">Beer</option>
-        <option value="vine">Wine</option>
-    </select><br>
-    Ціна
-    <input type="text" name="price"><br>
-    опис
-    <textarea name="description"  cols="30" rows="10"></textarea><br>
-    Кількість
-    <input type="text" name="stock"><br>
-    Статус
-    <input type="radio" name="status" value="enabled">
-    <input type="radio" name="status" value="disabled"><br>
-    <input type="file" name="pic">
-    <input type="submit" value="Додати">
-</form>
-<br>
-<a href="/showOrders">Показати замовлення</a>
-<c:forEach items="${orders}" var="order">
-    <p>${order}</p>
-</c:forEach>
-</body>
-</html>
+<%@include file="home_header.jsp"%>
+<div class="white container hg-100 wd-100 mt-87">
+    <div class="container">
+            <div class="adminHead">
+                <h2>Вітаю на сторінці Адміністратора</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center mt-57 ">
+                    <a href="/addProduct" class=" btn btn-success adminsBtn">Додати товар</a>
+                </div>
+                <div class="col-md-6 text-center mt-57 ">
+                    <a href="/showOrders" class=" btn btn-success adminsBtn">Показати замовлення</a>
+                </div>
+            </div>
+
+
+            <input type="text" name="name" id="cName">
+            <button id="ctgBtn">add</button>
+
+    </div>
+</div>
+<%@include file="footer.jsp"%>

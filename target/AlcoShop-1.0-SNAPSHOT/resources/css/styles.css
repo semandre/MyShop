@@ -48,6 +48,9 @@
 .fsz-n{
     font-size: 10px;
 }
+.ml-30{
+    margin-left: 30px;
+}
 .mb-20{
     margin-bottom: 20px;
 }
@@ -79,10 +82,16 @@ margin-top: 87px;
     height: 200px;
 }
 .hg-100{
-    height: 100%;
+    min-height: 100%;
 }
 .wd-100{
     width: 100%;
+}
+.wd-60{
+    width: 60%;
+}
+m-auto{
+    margin: 0 auto;
 }
 
 .va-m{
@@ -179,4 +188,101 @@ a:hover{
 .line{
     color:#F15A23;
     width: 30px;
+}
+
+/*ADMIN*/
+.adminHead{
+    text-align: center;
+    padding-top: 50px;
+    font-weight:bold;
+}
+
+.adminsBtn{
+
+    width: 198px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 10px;
+    background-color: #FF7902;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    color: white;
+}
+
+.adminsBtn:active{
+    outline:none;
+}
+
+.inputSize{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #3F3F3F ;
+    font-size: 1.30769em;
+    width: 100%;
+    height: 2em;
+    text-indent: .5em;
+    outline: 0;
+    box-shadow: inset 2px 2px 0 1px #f2f2f3;
+    border-radius: 3px;
+}
+.spanSize{
+    font-size: 30px;
+    color: #544B4E;
+}
+.radioSize{
+    font-size: 15px;
+    color: #544B4E;
+}
+
+.textArea{
+    height: 90px;
+    text-indent: .5em;
+    outline: 0;
+    box-shadow: inset 2px 2px 0 1px #f2f2f3;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #3F3F3F ;
+    font-size: 1.30769em;
+    width: 100%;
+}
+
+/*input[type="file"]{*/
+    /*display: none;*/
+/*}*/
+
+/*SELECT*/
+.styled-select {
+
+    height: 42px;
+    overflow: hidden;
+    width: 100%;
+    outline: 0;
+    box-shadow: inset 2px 2px 0 1px #f2f2f3;
+    border-radius: 3px;
+    border: 1px solid #3F3F3F ;
+    /*background-color: #FF7902;*/
+}
+
+.styled-select select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 42px;
+    padding: 5px; /* If you add too much padding here, the options won't show in IE */
+    width: 100%;
+    font-size: 20px;
+
+}
+.styled-select option{
+    /*background-color: #FF7902;*/
+}
+
+/*.styled-select option:focus>option:checked{*/
+    /*background: #000 !important;*/
+/*}*/
+
+.semi-square {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }

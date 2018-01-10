@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface AlcoDao extends JpaRepository<Alcogol,Integer> {
 
-    @Query("from Alcogol a where a.category=:category")
-    public List<Alcogol> findAlcogolByCategory(@Param("category") String category);
+    @Query("from Alcogol a join fetch a.category c where c.id=:id")
+    List<Alcogol> findAlcogolByCategory(@Param("id") int id);
+
+    @Query("from Alcogol a join fetch a.category where a.id=:id")
+    Alcogol findAllWithCategory(@Param("id") int id);
 }

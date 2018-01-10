@@ -31,9 +31,9 @@
                             <div class="dropdown">
                                 <button onclick="myFunction()" class="dropbtn ">Категорії</button>
                                 <div id="myDropdown" class="dropdown-content">
-                                    <a href="/vodka" class="col-lg-12 category mt-2">Горілка</a>
-                                    <a href="/wine" class="col-lg-12 category mt-2">Вино</a>
-                                    <a href="/beer" class="col-lg-12 category mt-2">Пиво</a>
+                                    <c:forEach items="${category}" var="category">
+                                        <a href="/${category.id}" class="col-lg-12 category mt-2">${category.name}</a>
+                                    </c:forEach>
                                 </div>
                             </div>
 
@@ -47,15 +47,13 @@
                                 <h2 class="text-center"><a href="/viewProduct/${alc.id}">${alc.name}</a></h2>
                                 <div class="prod-img"><img src="${alc.pic}" alt="img" width="150px" height="200px"></div>
                                 <div class="row">
-
-                                <span class="d-inline-block col-xs-6 col-md-6    text-center">
+                                <span class="d-inline-block col-xs-6 col-md-6 text-center">
                             <span class="ff-tah price-theme mb-20 va-m">${alc.price}грн</span>
                                 </span>
                                     <span class="d-inline-block col-xs-6 col-md-6   text-center">
                             <button class="btn btn-success  addToCartBtn mt-26 " onclick="addToCart(${alc.id})">В корзину</button>
                                 </span>
-                                    <input type="hidden" value="${alc.id}" id="alcId">
-                                </div>
+                            </div>
 
                             </div>
                         </c:forEach>

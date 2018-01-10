@@ -18,16 +18,13 @@ public interface CartDao extends JpaRepository<Cart,Integer> {
     @Query("update Cart c set c.client=:client where c.sessionId=:sessionId ")
     void updateAll(@Param("client")Client client,@Param("sessionId") String sessionId);
 
-    @Modifying
-    @Query("update Cart c  set c.sessionId=:sessionId where c.client=:client")
-    void updateSessionId(@Param("sessionId") String sessionId,@Param("client")Client client);
-
-
     @Query("from Cart c where c.sessionId=:sessionId")
     List<Cart> findAllBySessionId(@Param("sessionId") String sessionId);
 
-    @Query("from Cart as c  join fetch c.client as cl ")
-    List<Cart> findByClient();
+    @Query("from Cart c join fetch c.client ")
+    List<Cart> findAllCartsWithClients();
+
+
 
 
 

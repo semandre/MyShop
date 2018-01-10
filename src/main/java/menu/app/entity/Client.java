@@ -16,8 +16,10 @@ public class Client {
     private String address;
     private int number;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
     private List <Cart> cartList=new ArrayList<>();
+
+
 
 
 
@@ -70,6 +72,14 @@ public class Client {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public List<Cart> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
     }
 
     @Override

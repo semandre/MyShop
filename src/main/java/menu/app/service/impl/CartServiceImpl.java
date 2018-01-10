@@ -39,18 +39,13 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void updateSessionId( String sessionId,Client client ) {
-        cartDao.updateSessionId(sessionId,client);
-    }
-
-    @Override
     public List<Cart> findAllBySessionId(String sessionId) {
         return cartDao.findAllBySessionId(sessionId);
     }
 
     @Override
     public List<Cart> findByClient() {
-        return cartDao.findByClient();
+        return cartDao.findAllCartsWithClients();
     }
 
 }

@@ -18,5 +18,10 @@ public class ClientServiceImpl implements ClientService {
         clientDAO.save(client);
     }
 
+    @Override
+    public List<Client> findAll() {
+       return clientDAO.findAll();
+    }
+
 
 }

@@ -31,9 +31,9 @@
                             <div class="dropdown">
                                 <button onclick="myFunction()" class="dropbtn ">Категорії</button>
                                 <div id="myDropdown" class="dropdown-content">
-                                    <a href="/vodka" class="col-lg-12 category mt-2">Горілка</a>
-                                    <a href="/wine" class="col-lg-12 category mt-2">Вино</a>
-                                    <a href="/beer" class="col-lg-12 category mt-2">Пиво</a>
+                                    <c:forEach items="${category}" var="category">
+                                        <a href="/${category.id}" class="col-lg-12 category mt-2">${category.name}</a>
+                                    </c:forEach>
                                 </div>
                             </div>
 

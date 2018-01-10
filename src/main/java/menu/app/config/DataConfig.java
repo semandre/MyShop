@@ -43,7 +43,7 @@ public class DataConfig {
     @Bean
     public JpaVendorAdapter vendorAdapter(){
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        vendorAdapter.setShowSql(true);
+//        vendorAdapter.setShowSql(true);
         vendorAdapter.setDatabase(Database.MYSQL);
         return vendorAdapter;
     }

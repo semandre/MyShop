@@ -22,7 +22,7 @@
                                 <h1 class="text-center ">${alcogol.name}</h1>
                             </div>
                             <div class="col-md-12 borDs headName">
-                                    <p class="text-left mb-0">Категорія:${alcogol.category}</p>
+                                    <p class="text-left mb-0">Категорія:${alcogol.category.name}</p>
                                     <p class="text-left mb-0">Статус:${alcogol.status}</p>
                             </div>
                             <div class="col-md-12 borDs headName">

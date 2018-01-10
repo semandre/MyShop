@@ -2,8 +2,10 @@ package menu.app.controller;
 
 import menu.app.entity.Alcogol;
 import menu.app.entity.Cart;
+import menu.app.entity.Category;
 import menu.app.service.AlcoService;
 import menu.app.service.CartService;
+import menu.app.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ public class MainController {
     AlcoService alcoService;
 @Autowired
     CartService cartService;
+@Autowired
+    CategoryService categoryService;
 
 //    @GetMapping("/")
 //    public String startPage(){
@@ -31,22 +35,31 @@ public String cart(Model model, HttpSession session) {
     for (Cart cart : allBySessionId) {
          total = total +(cart.getQuantity()*cart.getPrice());
     }
+    session.setAttribute("cart",allBySessionId);
+
     model.addAttribute("total",total);
-    model.addAttribute("listCart",allBySessionId);
+    model.addAttribute("listCart",session.getAttribute("cart"));
     return "cart";
 }
 
     @GetMapping("/")
     public String mainPage(Model model){
         List<Alcogol> alcogolList = alcoService.findAll();
+        List <Category> categoryList=categoryService.findAll();
+        model.addAttribute("category",categoryList);
         model.addAttribute("alcogol",alcogolList);
         return "main";
     }
 
 
     @GetMapping("/admin")
-    public String admin(){
+    public String admin() {
         return "admin";
     }
+    @GetMapping("/addProduct")
+    public String addProduct(Model model){
+        model.addAttribute("category",categoryService.findAll());
+        return "addProduct";
+        }
 
 }
