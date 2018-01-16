@@ -3,6 +3,7 @@ package menu.app.service.impl;
 import menu.app.dao.CartDao;
 import menu.app.entity.Cart;
 import menu.app.entity.Client;
+import menu.app.entity.Orders;
 import menu.app.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,14 +30,19 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void update(String sessionId,String name, int quantity) {
-        cartDao.updateByName(sessionId,name,quantity);
+    public void update(String sessionId, String name, int quantity, Orders orders) {
+        cartDao.updateByName(sessionId,name,quantity,orders);
     }
 
     @Override
-    public void updateAll(Client client,String sessionId) {
-        cartDao.updateAll(client,sessionId);
+    public void updateQuantityByName(String sessionId, String name, int quantity) {
+        cartDao.updateQuantityByName(sessionId,name,quantity);
     }
+
+//    @Override
+//    public void updateAll(Client client,String sessionId) {
+//        cartDao.updateAll(client,sessionId);
+//    }
 
     @Override
     public List<Cart> findAllBySessionId(String sessionId) {
@@ -44,8 +50,13 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> findByClient() {
-        return cartDao.findAllCartsWithClients();
+    public List<Cart> findAllCartsWithOrder() {
+        return cartDao.findProductsWithOrder();
     }
+
+//    @Override
+//    public List<Cart> findByClient() {
+//        return cartDao.findAllCartsWithClients();
+//    }
 
 }

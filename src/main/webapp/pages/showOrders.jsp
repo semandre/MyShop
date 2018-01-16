@@ -7,17 +7,21 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="white container hg-100 wd-100 mtr-10">
+<%@include file="home_header.jsp"%>
+<div class="white container hg-100 wd-100 mt-87">
     <div class="container">
 
         <c:forEach items="${orders}" var="order">
             <p>${order.clientName}</p>
             <p>${order.lastName}</p>
+            <p>${order.cityName}</p>
             <p>${order.address}</p>
             <p>${order.number}</p>
-            <p>${order.PName}</p>
-            <p>${order.price}</p>
-            <p>${order.quantity}</p>
+            <div><c:forEach items="${order.cartList}" var="list">
+                <p>${list.name}</p>
+                <p>${list.price}</p>
+                <p>${list.quantity}</p>
+            </c:forEach></div>
         </c:forEach>
     </div>
 </div>

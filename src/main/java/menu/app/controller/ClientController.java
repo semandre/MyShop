@@ -3,8 +3,12 @@ package menu.app.controller;
 import menu.app.dto.CartClientDTO;
 import menu.app.entity.Cart;
 import menu.app.entity.Client;
+import menu.app.entity.Orders;
 import menu.app.service.CartService;
+import menu.app.service.CityService;
 import menu.app.service.ClientService;
+import menu.app.service.OrdersService;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,24 +26,27 @@ public class ClientController {
     ClientService clientService;
     @Autowired
     CartService cartService;
+    @Autowired
+    CityService cityService;
+    @Autowired
+    OrdersService ordersService;
 
 
     @PostMapping("/order")
     @Transactional
     public String createCl(@RequestParam String name,
                            @RequestParam String lastName,
+                           @RequestParam String email,
                            @RequestParam String address,
                            @RequestParam int number, HttpSession session){
-        Client client = new Client(session.getId(),name,lastName,address,number);
+        Client client = new Client(session.getId(),name,lastName,email,address,number);
+        client.setCity(cityService.findByCityName());
+//        client.setOrder(ordersService.findOne(session.getId()));
         clientService.save(client);
+        ordersService.updateClient(session.getId(),clientService.findBySessionId(session.getId()));
         List<Cart> bySessionId = cartService.findAllBySessionId(session.getId());
-        for (Cart cart : bySessionId) {
-            cart.setClient(client);
-            cartService.updateAll(client,session.getId());
-
-        }
         bySessionId.clear();
-        session.setAttribute("cart",null);
+        session.setAttribute("cart",bySessionId);
 //        System.out.println(bySessionId);
         return "redirect:/cart";
     }
@@ -48,42 +55,49 @@ public class ClientController {
     @GetMapping("/showOrders")
     public String showOrders(Model model)
     {
-//        model.addAttribute("orders",cartService.findByClient());
-        List<Cart> byClient = cartService.findByClient();
-//        List<Client> clients = clientService.findAll();
-//        List<Cart> cartList = new ArrayList<>();
-//        for (Client client : clients) {
-//            for (Cart cart : byClient) {
-//                if (client.getId()==cart.getClient().getId()){
-//                    cartList.add(cart);
-//                }
-//            }
-//            client.setCartList(cartList);
-//            System.out.println(client);
-//        }
-
-
-        List<CartClientDTO> dtos = new ArrayList<>();
-        for (Cart cart : byClient) {
+        Cart cart = new Cart();
+        cart.setSessionId("asd");
+        List<Cart> cartList = cartService.findAllCartsWithOrder();
+        List<CartClientDTO> dtoList = new ArrayList<>();
+        for (Cart order : cartList) {
             CartClientDTO dto = new CartClientDTO();
-            dto.setClientId(cart.getClient().getId());
-            dto.setClientName(cart.getClient().getName());
-            dto.setLastName(cart.getClient().getLastName());
-            dto.setAddress(cart.getClient().getAddress());
-            dto.setNumber(cart.getClient().getNumber());
-            dto.setPId(cart.getId());
-            dto.setPName(cart.getName());
-            dto.setPrice(cart.getPrice());
-            dto.setQuantity(cart.getQuantity());
-            dto.setSessionId(cart.getSessionId());
-            dtos.add(dto);
+            if (!cart.getSessionId().equals(order.getSessionId())){
+                dto.setSessionId(order.getSessionId());
+                dto.setClientId(order.getOrder().getClient().getId());
+                dto.setClientName(order.getOrder().getClient().getName());
+                dto.setLastName(order.getOrder().getClient().getLastName());
+                dto.setAddress(order.getOrder().getClient().getAddress());
+                dto.setEmail(order.getOrder().getClient().getEmail());
+                dto.setNumber(order.getOrder().getClient().getNumber());
+                dto.setCityName(order.getOrder().getClient().getCity().getCityName().toLowerCase());
+                dto.setCartList(cartService.findAllBySessionId(order.getSessionId()));
+                dtoList.add(dto);
+            }
 
+            cart=order;
         }
-        model.addAttribute("orders",dtos);
+        System.out.println(dtoList);
+        model.addAttribute("orders",dtoList);
+
+
+//        List<CartClientDTO> dtos = new ArrayList<>();
+//        for (Cart cart : byClient) {
+//            CartClientDTO dto = new CartClientDTO();
+//            dto.setClientId(cart.getClient().getId());
+//            dto.setClientName(cart.getClient().getName());
+//            dto.setLastName(cart.getClient().getLastName());
+//            dto.setAddress(cart.getClient().getAddress());
+//            dto.setNumber(cart.getClient().getNumber());
+//            dto.setPId(cart.getId());
+//            dto.setPName(cart.getName());
+//            dto.setPrice(cart.getPrice());
+//            dto.setQuantity(cart.getQuantity());
+//            dto.setSessionId(cart.getSessionId());
+//            dtos.add(dto);
+//
+//        }
+//        model.addAttribute("orders",dtos);
         return "showOrders";
     }
-
-
-
-
+    
 }

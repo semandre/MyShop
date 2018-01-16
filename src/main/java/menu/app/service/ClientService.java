@@ -12,5 +12,6 @@ public interface ClientService {
 
      void save(Client client);
      List<Client> findAll();
-
+//     List<Client> findAllWithOrders();
+     Client findBySessionId(String sessionId);
 }

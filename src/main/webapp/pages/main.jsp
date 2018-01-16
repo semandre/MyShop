@@ -52,6 +52,7 @@
                                 </span>
                                     <span class="d-inline-block col-xs-6 col-md-6   text-center">
                             <button class="btn btn-success  addToCartBtn mt-26 " onclick="addToCart(${alc.id})">В корзину</button>
+                                        <%--<a href="/add/${alc.id}" class="btn btn-success  addToCartBtn mt-26 ">В корзину</a>--%>
                                 </span>
                             </div>
 

@@ -47,6 +47,7 @@
                     <form action="/order" method="post">
                         <input type="text" name="name" placeholder="Ім'я" class="inputForm" required><br>
                         <input type="text" name="lastName" placeholder="Прізвище" class="inputForm" required><br>
+                        <input type="email" name="email" placeholder="e-mail" class="inputForm" required><br>
                         <input type="text" name="address" placeholder="Адреса" class="inputForm" required><br>
                         <input type="text" name="number" placeholder="Номер телефону" class="inputForm" required><br>
                         <input type="submit" value="Замовити" class="btn btn-success addToCartBtn mt-20">

@@ -23,8 +23,12 @@
             </div>
 
 
-            <input type="text" name="name" id="cName">
+            <input type="text" name="name" id="cName" required>
             <button id="ctgBtn">add</button>
+
+
+        <input type="text" name="cityName" id="cityName">
+        <button id="cityNameBtn">find city</button>
 
     </div>
 </div>

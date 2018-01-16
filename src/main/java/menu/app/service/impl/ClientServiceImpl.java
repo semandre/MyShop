@@ -23,5 +23,15 @@ public class ClientServiceImpl implements ClientService {
        return clientDAO.findAll();
     }
 
+    @Override
+    public Client findBySessionId(String sessionId) {
+        return clientDAO.findBySessionId(sessionId);
+    }
+
+//    @Override
+//    public List<Client> findAllWithOrders() {
+//        return clientDAO.findAllWithOrder();
+//    }
+
 
 }

@@ -2,6 +2,9 @@ package menu.app.dto;
 
 
 import lombok.*;
+import menu.app.entity.Cart;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,26 +17,21 @@ public class CartClientDTO {
     private String clientName;
     private String lastName;
     private String address;
+    private String email;
+    private String cityName;
     private int number;
-    private int pId;
-    private String pName;
-    private double price;
-    private int quantity;
+    private List<Cart> cartList;
 
-    public CartClientDTO(int clientId, String sessionId,
-                         String clientName, String lastName,
-                         String address, int number,
-                         int pId, String pName,
-                         double price, int quantity) {
+    public CartClientDTO(int clientId, String sessionId, String clientName, String lastName,
+                         String address, String email, String cityName, int number) {
         this.clientId = clientId;
         this.sessionId = sessionId;
         this.clientName = clientName;
         this.lastName = lastName;
         this.address = address;
+        this.email = email;
+        this.cityName = cityName;
         this.number = number;
-        this.pId = pId;
-        this.pName = pName;
-        this.price = price;
-        this.quantity = quantity;
+
     }
 }

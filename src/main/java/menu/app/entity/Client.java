@@ -1,10 +1,19 @@
 package menu.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Client {
 
     @Id
@@ -13,83 +22,24 @@ public class Client {
     private String sessionId;
     private String name;
     private String lastName;
+    private String email;
     private String address;
     private int number;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private City city;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
-    private List <Cart> cartList=new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
+//    private List <Cart> cartList=new ArrayList<>();
+    @OneToOne(fetch = FetchType.LAZY ,mappedBy = "client")
+    private Orders order;
 
 
-
-
-
-    public Client() {
-    }
-
-    public Client(String sessionId,String name, String lastName, String address, int number) {
-        this.sessionId=sessionId;
+    public Client(String sessionId, String name, String lastName, String email, String address, int number) {
+        this.sessionId = sessionId;
         this.name = name;
         this.lastName = lastName;
+        this.email = email;
         this.address = address;
         this.number = number;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public List<Cart> getCartList() {
-        return cartList;
-    }
-
-    public void setCartList(List<Cart> cartList) {
-        this.cartList = cartList;
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", number=" + number +
-                '}';
     }
 }

@@ -15,9 +15,10 @@ public class Cart {
     private double price;
     private int quantity;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private Client client;
-
+//    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//    private Client client;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Orders order;
 
     public Cart() {
     }
@@ -70,12 +71,20 @@ public class Cart {
         this.sessionId = sessionId;
     }
 
-    public Client getClient() {
-        return client;
+//    public Client getClient() {
+//        return client;
+//    }
+//
+//    public void setClient(Client client) {
+//        this.client = client;
+//    }
+
+    public Orders getOrder() {
+        return order;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setOrder(Orders order) {
+        this.order = order;
     }
 
     @Override
@@ -86,7 +95,7 @@ public class Cart {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", client=" + client +
+//                ", client=" + client +
                 '}';
     }
 }
