@@ -19,4 +19,10 @@ public class CityServiceImpl implements CityService {
     public City findByCityName() {
         return cityDao.findByCityName();
     }
+
+    @Override
+    public List<City> allCitiesWithName(String cityName) {
+        return cityDao.allCitiesWithName(cityName);
+    }
+
 }

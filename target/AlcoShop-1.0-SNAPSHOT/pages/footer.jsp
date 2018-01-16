@@ -26,6 +26,30 @@
 <script src="/resources/js/AjaxCart.js"></script>
 <script src="/resources/js/adminAjax.js"></script>
 <script>
+    $('#cityNameBtn').click(function () {
+
+        console.log('hello');
+        let cityName=$('#cityName').val();
+        let city={
+            cityName
+        };
+        $.ajax({
+            url:'/find',
+            method:'POST',
+            data: JSON.stringify(city),
+            contentType:"application/json; charset=utf-8",
+            success:function (data) {
+                console.log(data);
+            },
+            error:function () {
+                console.log('error');
+            }
+
+        });
+
+    });
+</script>
+<script>
     $( function() {
         /*
         - how to call the plugin:

@@ -19,7 +19,6 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private long code;
     private String shortCut;
     @Column(columnDefinition="TEXT")

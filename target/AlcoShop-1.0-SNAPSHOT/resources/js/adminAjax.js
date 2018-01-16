@@ -18,25 +18,3 @@ $('#ctgBtn').click(function () {
 });
 
 
-$('#cityNameBtn').click(function () {
-
-    console.log('hello');
-    let cityName=$('#cityName').val();
-    let city={
-        cityName
-    };
-    $.ajax({
-        url:'/findByCityName',
-        type:'POST',
-        data: JSON.stringify(city),
-        contentType:'application/json',
-        success:function (data) {
-            console.log(data);
-        },
-        error:function () {
-            console.log('error');
-        }
-
-    });
-
-});

@@ -27,8 +27,13 @@
             <button id="ctgBtn">add</button>
 
 
-        <input type="text" name="cityName" id="cityName">
-        <button id="cityNameBtn">find city</button>
+        <form action="/find" method="post">
+            <input type="text" name="cityName" id="cityName">
+            <%--<button id="cityNameBtn">find city</button>--%>
+            <input type="submit" value="addCity">
+        </form>
+
+
 
     </div>
 </div>
