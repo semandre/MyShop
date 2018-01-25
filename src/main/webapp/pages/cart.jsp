@@ -12,7 +12,7 @@
     <div class="white container hg-100 wd-100 mtr-10">
         <div class="container">
             <div id="cart">
-                <table class="table  ml-5 mt-100" >
+                <table class="table  ml-5 mt-100 w-60" >
                     <tr>
                         <th>Назва продукту</th>
                         <th>Ціна</th>

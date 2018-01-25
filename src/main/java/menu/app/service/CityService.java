@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface CityService {
     City findByCityName();
-    List<City> allCitiesWithName(String cityName);
+    List<City> findAllByCityName(String cityName);
 
 }

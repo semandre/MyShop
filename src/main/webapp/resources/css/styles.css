@@ -2,6 +2,9 @@
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 
 }
+.order-block{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
 
 
 .addToCartBtn{
@@ -90,8 +93,12 @@ margin-top: 87px;
 .wd-60{
     width: 60%;
 }
-m-auto{
+.m-auto{
     margin: 0 auto;
+}
+
+.pt-20{
+    padding-top: 20px ;
 }
 
 .va-m{

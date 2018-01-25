@@ -6,6 +6,7 @@ import menu.app.entity.Orders;
 import menu.app.service.AlcoService;
 import menu.app.entity.Cart;
 import menu.app.service.CartService;
+import menu.app.service.CityService;
 import menu.app.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +51,6 @@ public class CartController {
 
     @GetMapping("/remove/{id}")
     public String removeCart(@PathVariable int id, HttpSession session) {
-
         List<Cart> cartList = cartService.findAllBySessionId(session.getId());
         for (Cart cart : cartList) {
             if (cart.getId()==(id)){

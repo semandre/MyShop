@@ -9,20 +9,43 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="home_header.jsp"%>
 <div class="white container hg-100 wd-100 mt-87">
-    <div class="container">
+    <div class="container pt-20">
 
-        <c:forEach items="${orders}" var="order">
-            <p>${order.clientName}</p>
-            <p>${order.lastName}</p>
-            <p>${order.cityName}</p>
-            <p>${order.address}</p>
-            <p>${order.number}</p>
-            <div><c:forEach items="${order.cartList}" var="list">
-                <p>${list.name}</p>
-                <p>${list.price}</p>
-                <p>${list.quantity}</p>
-            </c:forEach></div>
-        </c:forEach>
+        <div class="wd-60 mt-20 m-auto">
+            <div>
+                <c:forEach items="${orders}" var="order">
+                   <div class="order-block">
+                       <div class="row">
+                           <span class= "spanSize col-sm-6 pl-5">Замовник</span>
+                           <div class="col-sm-6">
+                               <span class="spanSize  ">${order.clientName}</span>
+                               <span class="spanSize">${order.lastName}</span>
+                           </div>
+                           <span class="spanSize col-sm-6 pl-5">Адреса</span>
+                           <div class="col-sm-6">
+                               <span class="spanSize">${order.cityName}</span>
+                               <span class="spanSize ml-2">${order.address}</span>
+                           </div>
+                           <span class="col-sm-6 spanSize pl-5">Номер телефону</span>
+                           <span class="spanSize col-sm-6">0${order.number}</span>
+                       </div>
+                       <div class="text-center">
+                           <span class="spanSize">Замовлення</span>
+                           <c:forEach items="${order.cartList}" var="list">
+                               <div class="text-center">
+                                   <div>
+                                       <span>${list.name}</span>
+                                       <span>${list.price}</span>
+                                       <span>${list.quantity}</span>
+                                       <button class="btn btn-success addToCartBtn">Delete</button>
+                                   </div>
+                               </div>
+                           </c:forEach>
+                       </div>
+                   </div>
+                </c:forEach>
+            </div>
+        </div>
     </div>
 </div>
 <%@include file="footer.jsp"%>

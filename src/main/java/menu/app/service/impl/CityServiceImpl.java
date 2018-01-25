@@ -21,8 +21,8 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public List<City> allCitiesWithName(String cityName) {
-        return cityDao.allCitiesWithName(cityName);
+    public List<City> findAllByCityName(String cityName) {
+        return cityDao.fABCN(cityName);
     }
 
 }

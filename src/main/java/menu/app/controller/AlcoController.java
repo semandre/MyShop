@@ -22,6 +22,7 @@ public class AlcoController {
     @Autowired
     CategoryService categoryService;
 
+
     @PostMapping("/createAlc")
     public String createAlc(@RequestParam String name,
                             @RequestParam String category,
