@@ -62,6 +62,7 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
 
        }
        localStorage.setItem('cartItems',JSON.stringify($scope.cartItems));
+       $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
    };
    
    $scope.addOne=function () {

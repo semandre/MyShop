@@ -6,9 +6,9 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
     $scope.cartView='cart';
     $scope.isEmpty=true;
     $scope.categories=[];
-   var cartItems= $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
+    $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
     console.log($scope.cartItems);
-    var isEmpty = cartItems.length>0 ? $scope.isEmpty=false : $scope.isEmpty=true;
+    var isEmpty = $scope.cartItems.length>0 ? $scope.isEmpty=false : $scope.isEmpty=true;
     console.log(isEmpty);
 
 
@@ -25,7 +25,7 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
     // };
     $scope.checkout=function () {
         $scope.cartView='order';
-       $http.post('/checkout',cartItems);
+       $http.post('/checkout',$scope.cartItems);
        localStorage.removeItem('cartItems');
     };
 
@@ -62,6 +62,7 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
 
        }
        localStorage.setItem('cartItems',JSON.stringify($scope.cartItems));
+       $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
    };
    
    $scope.addOne=function () {
