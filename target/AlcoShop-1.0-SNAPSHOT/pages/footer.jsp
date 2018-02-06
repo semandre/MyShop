@@ -25,6 +25,7 @@
 <script src="/resources/js/dropdown.js"></script>
 <script src="/resources/js/AjaxCart.js"></script>
 <script src="/resources/js/adminAjax.js"></script>
+<script src="/resources/js/mainView.js"></script>
 <script>
     $('#cityNameBtn').click(function () {
 

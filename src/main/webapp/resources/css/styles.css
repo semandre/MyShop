@@ -100,9 +100,15 @@ margin-top: 87px;
 .pt-20{
     padding-top: 20px ;
 }
+.vertical-padding-20{
+    padding: 20px 0;
+}
 
 .va-m{
     vertical-align: middle;
+}
+.b-btm{
+    border-bottom: solid 2px grey;
 }
 
 .p-price{
@@ -157,6 +163,14 @@ a:hover{
     outline:none;
 }
 
+.quant{
+    font-size: 20px;
+    width: 32px;
+    border: none;
+    background-color: #FF7902;
+    color: white;
+}
+
 /*------------------------------------------*/
 .fa{
     margin-top: 17px;
@@ -198,25 +212,65 @@ a:hover{
 }
 
 /*ADMIN*/
+
+.buttonList{
+    list-style-type: none;
+    padding: 0px;
+}
+.buttonList>li{
+    width: 100%;
+    border-bottom: 1px solid grey;
+
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+
+}
+.buttonList>li:hover{
+    -webkit-box-shadow: inset 0px 0px 24px 2px rgba(0,0,0,0.22);
+    -moz-box-shadow: inset 0px 0px 24px 2px rgba(0,0,0,0.22);
+    box-shadow: inset 0px 0px 24px 2px rgba(0,0,0,0.22);
+    color: #000000;
+}
+.buttonList>li:active{
+    outline: none;
+
+}
 .adminHead{
     text-align: center;
-    padding-top: 50px;
+    padding: 50px;
     font-weight:bold;
+    border-bottom: solid 1px grey;
+}
+
+.non-used{
+    margin-top: 150px;
+    border-bottom: dashed 1px grey ;
+    font-size: 50px;
+    opacity: 0.4;
 }
 
 .adminsBtn{
-
-    width: 198px;
-    border: none;
-    margin-bottom: 10px;
-    font-size: 10px;
+    width: 100%;
+    color: white;
+    padding: 10px 0;
     background-color: #FF7902;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    font-size: 14px;
+    border: none;
+}
+.adminsBtn:hover{
     color: white;
 }
 
-.adminsBtn:active{
+.adminsBtn:focus{
     outline:none;
+    background-color: #3F3F3F;
+}
+.addProdBtn{
+    width: 198px;
+    background-color: #FF7902;
+    font-size: 10px;
+    padding: 10px 0;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    color: white;
 }
 
 .inputSize{
@@ -253,9 +307,13 @@ a:hover{
     width: 100%;
 }
 
-/*input[type="file"]{*/
-    /*display: none;*/
-/*}*/
+input[type="file"]{
+    opacity:0;
+    filter:alpha(opacity:0);
+    cursor:pointer;
+    border:none;
+
+}
 
 /*SELECT*/
 .styled-select {
@@ -292,4 +350,25 @@ a:hover{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+
+/*-----------------MODAL-------------------*/
+.modal{
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+
+}
+.modal-content{
+    margin: 15% auto;
+    width: 80%;
+}
+.dBlock{
+    display: block;
+}
+.dNone{
+    display: none;
 }

@@ -1,6 +1,7 @@
 package menu.app.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "clients")
 public class City {
 
     @Id
@@ -21,10 +22,12 @@ public class City {
     private int id;
     private long code;
     private String shortCut;
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition = "TEXT")
     private String cityName;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "city")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
     private List<Client> clients;
+
     public City(int code, String shortCut, String cityName) {
         this.code = code;
         this.shortCut = shortCut;

@@ -42,24 +42,18 @@ public String cart(Model model, HttpSession session) {
     return "cart";
 }
 
-    @GetMapping("/")
-    public String mainPage(Model model){
-        List<Alcogol> alcogolList = alcoService.findAll();
-        List <Category> categoryList=categoryService.findAll();
-        model.addAttribute("category",categoryList);
-        model.addAttribute("alcogol",alcogolList);
-        return "main";
-    }
+@GetMapping("/")
+public String mainPage(Model model){
+    model.addAttribute("alcogol",alcoService.findAll());
+    model.addAttribute("category",categoryService.findAll());
+    return "main";
+}
 
 
     @GetMapping("/admin")
     public String admin() {
         return "admin";
     }
-    @GetMapping("/addProduct")
-    public String addProduct(Model model){
-        model.addAttribute("category",categoryService.findAll());
-        return "addProduct";
-        }
+
 
 }

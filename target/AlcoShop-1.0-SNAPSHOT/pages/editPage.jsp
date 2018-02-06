@@ -1,19 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Андрій
-  Date: 09.01.2018
-  Time: 14:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class=" hg-100 wd-100 mb-20">
-    <div class="container">
+    <div class="container" ng-controller="adminsViewCtrl">
         <div class="vertical-padding-20">
-            <h1>Додати продукт</h1>
+            <h1>Редагувати продукт</h1>
             <h4 class="mt-26">Будь ласка заповніть усі поля щоб добавити інформацію по продукту</h4>
         </div>
-
         <div class="row">
             <div class="col-md-12 text-center mt-57 ">
                 <form action="/createAlc" method="post" enctype="multipart/form-data">
@@ -23,7 +15,7 @@
                                 <span class="spanSize ">Ім'я</span>
                             </div>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="inputSize" required>
+                                <input type="text" name="name" class="inputSize" required value="{{currentItem.name}}">
                             </div>
                         </div>
                         <div class="row mt-20">
@@ -32,8 +24,10 @@
                             </div>
                             <div class="col-md-9">
                                 <div class=" styled-select  semi-square">
-                                    <select name="category" required">
-                                            <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+                                    <select name="category" required ng-repeat="category in categories">
+                                        <%--<c:forEach items="${category}" var="category">--%>
+                                        <option value="{{category.name}}">{{category.name}}</option>
+                                        <%--</c:forEach>--%>
                                     </select>
                                 </div>
                             </div>
@@ -44,7 +38,7 @@
                                 <span class="spanSize ">Ціна</span>
                             </div>
                             <div class="col-md-10">
-                                <input type="text" name="price" class="inputSize" required>
+                                <input type="text" name="price" class="inputSize" required value="{{currentItem.price}}">
                             </div>
                         </div>
 
@@ -64,7 +58,7 @@
                                 <span class="spanSize ">Кількість</span>
                             </div>
                             <div class="col-md-9">
-                                <input type="text" name="stock" class="inputSize" required>
+                                <input type="text" name="stock" class="inputSize" required value="{{currentItem.stock}}" >
                             </div>
                         </div>
 
@@ -95,16 +89,11 @@
                                 <input type="submit" value="Додати" class="btn  addProdBtn">
                             </div>
                         </div>
-
-
                     </div>
-
-
-
-
 
                 </form>
             </div>
         </div>
     </div>
 </div>
+

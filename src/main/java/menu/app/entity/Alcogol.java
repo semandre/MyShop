@@ -1,5 +1,6 @@
 package menu.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,7 +19,7 @@ public class Alcogol {
     private String status;
     private String pic;
 
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 

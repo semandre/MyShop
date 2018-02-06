@@ -1,18 +1,19 @@
+var modal = $('#modal');
+var btn=$('#cartBtn');
+btn.click(function () {
+    modal.css("display","block");
+    modal.modal("show");
+});
+$(document).click(function (e) {
+    if (e==modal){
+        modal.css("display","none");
+    }
 
-function addToCart(ident) {
+});
 
-    $('#cart').empty();
-
-        $.ajax({
-            url: '/add/' + ident,
-            type: "GET",
-
-        error:function () {
-            alert("error");
-        }
-
-
-    });
-};
+$('#closeBtn').click(function () {
+    modal.css("display","none");
+    modal.modal("hide");
+});
 
 

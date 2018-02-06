@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="home_header.jsp"%>
-<div class="white container wd-100 hg-100">
+<div class="white container wd-100 hg-100" >
     <section class="features-icons  text-center">
         <div class="container">
             <div class="row">

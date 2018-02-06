@@ -2,6 +2,7 @@ package menu.app.controller;
 
 import menu.app.dto.CartClientDTO;
 import menu.app.entity.Cart;
+import menu.app.entity.City;
 import menu.app.entity.Client;
 import menu.app.entity.Orders;
 import menu.app.service.CartService;
@@ -40,64 +41,23 @@ public class ClientController {
                            @RequestParam String address,
                            @RequestParam int number, HttpSession session){
         Client client = new Client(session.getId(),name,lastName,email,address,number);
+        System.out.println(client);
         client.setCity(cityService.findByCityName());
-//        client.setOrder(ordersService.findOne(session.getId()));
         clientService.save(client);
         ordersService.updateClient(session.getId(),clientService.findBySessionId(session.getId()));
-        List<Cart> bySessionId = cartService.findAllBySessionId(session.getId());
-        bySessionId.clear();
-        session.setAttribute("cart",bySessionId);
-//        System.out.println(bySessionId);
-        return "redirect:/cart";
+
+        return "redirect:/";
     }
 
 
-    @GetMapping("/showOrders")
-    public String showOrders(Model model)
-    {
-        Cart cart = new Cart();
-        cart.setSessionId("asd");
-        List<Cart> cartList = cartService.findAllCartsWithOrder();
-        List<CartClientDTO> dtoList = new ArrayList<>();
-        for (Cart order : cartList) {
-            CartClientDTO dto = new CartClientDTO();
-            if (!cart.getSessionId().equals(order.getSessionId())){
-                dto.setSessionId(order.getSessionId());
-                dto.setClientId(order.getOrder().getClient().getId());
-                dto.setClientName(order.getOrder().getClient().getName());
-                dto.setLastName(order.getOrder().getClient().getLastName());
-                dto.setAddress(order.getOrder().getClient().getAddress());
-                dto.setEmail(order.getOrder().getClient().getEmail());
-                dto.setNumber(order.getOrder().getClient().getNumber());
-                dto.setCityName(order.getOrder().getClient().getCity().getCityName().toLowerCase());
-                dto.setCartList(cartService.findAllBySessionId(order.getSessionId()));
-                dtoList.add(dto);
-            }
-
-            cart=order;
-        }
-        System.out.println(dtoList);
-        model.addAttribute("orders",dtoList);
 
 
-//        List<CartClientDTO> dtos = new ArrayList<>();
-//        for (Cart cart : byClient) {
-//            CartClientDTO dto = new CartClientDTO();
-//            dto.setClientId(cart.getClient().getId());
-//            dto.setClientName(cart.getClient().getName());
-//            dto.setLastName(cart.getClient().getLastName());
-//            dto.setAddress(cart.getClient().getAddress());
-//            dto.setNumber(cart.getClient().getNumber());
-//            dto.setPId(cart.getId());
-//            dto.setPName(cart.getName());
-//            dto.setPrice(cart.getPrice());
-//            dto.setQuantity(cart.getQuantity());
-//            dto.setSessionId(cart.getSessionId());
-//            dtos.add(dto);
-//
-//        }
-//        model.addAttribute("orders",dtos);
-        return "showOrders";
+    @PostMapping("/find")
+    public String allCitiesWithCityName(@RequestParam String cityName,Model model){
+        List<City> allByCityName = cityService.findAllByCityName(cityName);
+        model.addAttribute("cityName",allByCityName);
+        System.out.println(allByCityName);
+        return "admin";
     }
     
 }

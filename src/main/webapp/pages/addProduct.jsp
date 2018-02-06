@@ -7,11 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="home_header.jsp"%>
-<div class="white container hg-100 wd-100 mt-87">
+<div class=" hg-100 wd-100 mb-20">
     <div class="container">
-        <div class="adminHead">
-            <h1>Сторінка додавання продукту</h1>
+        <div class="vertical-padding-20">
+            <h1>Додати продукт</h1>
             <h4 class="mt-26">Будь ласка заповніть усі поля щоб добавити інформацію по продукту</h4>
         </div>
 
@@ -33,10 +32,8 @@
                             </div>
                             <div class="col-md-9">
                                 <div class=" styled-select  semi-square">
-                                    <select name="category" required>
-                                        <c:forEach items="${category}" var="category">
-                                            <option value="${category.name}">${category.name}</option>
-                                        </c:forEach>
+                                    <select name="category" required">
+                                            <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -87,16 +84,15 @@
                             </div>
                         </div>
 
-                        <div class="row mt-20">
-                            <div class="col-md-6">
-                                <div class="btn btn-success adminsBtn" >
-                                    <span>Виберіть файл</span>
-                                    <input type="file" name="pic" required>
+                        <div class="row ">
+                            <div class="col-md-6 mt-20">
+                                <div class="btn  addProdBtn text-center" title="" >
+                                    <input type="file" name="pic" required value="Вибрати файл">
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
-                                <input type="submit" value="Додати" class="btn btn-success adminsBtn">
+                            <div class="col-md-6 mt-20">
+                                <input type="submit" value="Додати" class="btn  addProdBtn">
                             </div>
                         </div>
 
@@ -112,4 +108,3 @@
         </div>
     </div>
 </div>
-<%@include file="footer.jsp"%>

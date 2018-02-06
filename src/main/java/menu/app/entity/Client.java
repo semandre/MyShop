@@ -1,5 +1,6 @@
 package menu.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(exclude = {"city","order"})
 public class Client {
 
     @Id
@@ -25,11 +26,13 @@ public class Client {
     private String email;
     private String address;
     private int number;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private City city;
 
 //    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "client")
 //    private List <Cart> cartList=new ArrayList<>();
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY ,mappedBy = "client")
     private Orders order;
 

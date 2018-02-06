@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -46,9 +47,10 @@ public class AlcoController {
         return "redirect:/";
     }
     @GetMapping("/viewProduct/{id}")
-    public String viewProduct(@PathVariable int id,Model model){
+    public String viewProduct(@PathVariable int id, Model model){
         Alcogol alcogol = alcoService.findAllWithCategory(id);
         model.addAttribute("alcogol", alcogol);
+        System.out.println(alcogol);
         return "viewProduct";
     }
 

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="mainView">
 
 <head>
 
@@ -26,6 +27,8 @@
     <link rel="stylesheet" href="/resources/css/dropdown.css">
     <link rel="stylesheet" href="/resources/css/viewProduct.css">
 
+
+    <script src="/resources/vendor/angular/angular.js"></script>
     <script src="/resources/js/modernizr.custom.js"></script>
 </head>
 

@@ -1,6 +1,7 @@
 package menu.app.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "category")
     private List<Alcogol> alcogolList;
 

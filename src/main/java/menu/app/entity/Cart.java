@@ -1,6 +1,7 @@
 package menu.app.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import menu.app.entity.Alcogol;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Cart {
 
 //    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 //    private Client client;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private Orders order;
 
