@@ -25,4 +25,9 @@ public class CityServiceImpl implements CityService {
         return cityDao.fABCN(cityName);
     }
 
+    @Override
+    public List<City> findAll() {
+        return null;
+    }
+
 }

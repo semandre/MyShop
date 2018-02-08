@@ -1,22 +1,20 @@
 package menu.app.controller;
 
+import menu.app.dto.AlcoDTO;
 import menu.app.dto.CartClientDTO;
-import menu.app.entity.Cart;
-import menu.app.entity.City;
-import menu.app.entity.Client;
-import menu.app.entity.Orders;
-import menu.app.service.CartService;
-import menu.app.service.CityService;
-import menu.app.service.ClientService;
-import menu.app.service.OrdersService;
+import menu.app.entity.*;
+import menu.app.service.*;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,6 +29,8 @@ public class ClientController {
     CityService cityService;
     @Autowired
     OrdersService ordersService;
+    @Autowired
+    AlcoService alcoService;
 
 
     @PostMapping("/order")
@@ -40,12 +40,23 @@ public class ClientController {
                            @RequestParam String email,
                            @RequestParam String address,
                            @RequestParam int number, HttpSession session){
+        List<Cart> cartList = cartService.findAllBySessionId(session.getId());
+        String status="В наявності";
         Client client = new Client(session.getId(),name,lastName,email,address,number);
         System.out.println(client);
         client.setCity(cityService.findByCityName());
         clientService.save(client);
         ordersService.updateClient(session.getId(),clientService.findBySessionId(session.getId()));
+        for (Cart cart : cartList) {
+            Alcogol byName = alcoService.findByName(cart.getName());
+            int rizn = (byName.getStock() - cart.getQuantity());
+            if (rizn<=0){
+                status="Закінчився";
+            }
 
+            alcoService.updateStockAndStatus(rizn,status,cart.getName());
+
+        }
         return "redirect:/";
     }
 
@@ -59,5 +70,26 @@ public class ClientController {
         System.out.println(allByCityName);
         return "admin";
     }
-    
+
+//    @PostMapping("/editItem")
+//    @Transactional
+//    public String editItem(
+//                           @RequestParam String name,
+//                           @RequestParam double price,
+//                           @RequestParam int stock,
+//                           @RequestParam String status,
+//                           @RequestParam String description,
+//                           @RequestParam MultipartFile pic){
+//        System.out.println("hi");
+//        String path=System.getProperty("user.home")+ File.separator+"products\\";
+//        try {
+//            pic.transferTo(new File(path+pic.getOriginalFilename()));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        alcoService.updateItem(8, name, price, stock, status, description, "\\productPic\\"+pic.getOriginalFilename());
+//        return "admin";
+//    }
+
+
 }

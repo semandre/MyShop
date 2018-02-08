@@ -110,6 +110,9 @@ section.download {
         display: inline-block;
         margin-bottom: 0; } }
   @media (min-width: 768px) {
+    .adminHead{
+      font-size: 20px;
+    }
     section.download h2 {
       font-size: 70px; } }
 

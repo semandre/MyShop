@@ -35,7 +35,32 @@ public class AlcoServiceImpl implements AlcoService {
     }
 
     @Override
-    public Alcogol findAllWithCategory( int id) {
-        return alcoDao.findAllWithCategory(id);
+    public Alcogol findWithCategory( int id) {
+        return alcoDao.findWithCategory(id);
+    }
+
+    @Override
+    public List<Alcogol> findAllWithCategories() {
+        return alcoDao.findAllWithCathegories();
+    }
+
+    @Override
+    public void removeItem(int id) {
+        alcoDao.delete(id);
+    }
+
+    @Override
+    public Alcogol findByName(String name) {
+        return alcoDao.findByName(name);
+    }
+
+    @Override
+    public void updateItem(int id, String name, double price, int stock, String status, String description) {
+        alcoDao.updateItem(id,name,price,stock,status,description);
+    }
+
+    @Override
+    public void updateStockAndStatus(int stock, String status, String name) {
+        alcoDao.updateStockAndStatus(stock,status,name);
     }
 }

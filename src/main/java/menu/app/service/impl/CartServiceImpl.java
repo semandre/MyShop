@@ -44,5 +44,10 @@ public class CartServiceImpl implements CartService {
         return cartDao.findProductsWithOrder();
     }
 
+    @Override
+    public void deleteAllBySessionId(String sessionId) {
+        cartDao.deleteAllBySessionId(sessionId);
+    }
+
 
 }

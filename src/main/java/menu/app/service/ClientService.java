@@ -14,4 +14,5 @@ public interface ClientService {
      List<Client> findAll();
 //     List<Client> findAllWithOrders();
      Client findBySessionId(String sessionId);
+     void deleteAllBySessionId(String sessionId);
 }

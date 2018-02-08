@@ -13,4 +13,5 @@ public interface CartService {
     void update(String sessionId, String name, int quantity, Orders orders);
     List<Cart> findAllBySessionId(String sessionId);
     List<Cart> findAllCartsWithOrder();
+    void deleteAllBySessionId(String sessionId);
 }

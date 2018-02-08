@@ -28,6 +28,8 @@ public interface CartDao extends JpaRepository<Cart,Integer> {
     @Query("from Cart c join fetch c.order o join fetch o.client cl join fetch cl.city ci")
     List<Cart> findProductsWithOrder();
 
+    void deleteAllBySessionId(@Param("sessionId") String sessionId);
+
 
 
 

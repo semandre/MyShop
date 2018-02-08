@@ -352,6 +352,20 @@ input[type="file"]{
     border-radius: 5px;
 }
 
+/*------------------------------ORDER---------------------------*/
+.searchSelect{
+    width: 100%;
+    overflow: hidden;
+    border: none;
+}
+.searchSelect:focus{
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    outline: none;
+}
+
+
 /*-----------------MODAL-------------------*/
 .modal{
     position: fixed;
@@ -366,9 +380,7 @@ input[type="file"]{
     margin: 15% auto;
     width: 80%;
 }
-.dBlock{
-    display: block;
-}
-.dNone{
+
+.none{
     display: none;
 }

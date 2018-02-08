@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="home_header.jsp"%>
-<div class="white container wd-100 hg-100" >
+<div class="white container wd-100 hg-100" ng-controller="mainViewCtrl">
     <section class="features-icons  text-center">
         <div class="container">
             <div class="row">
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 borDs headName">
-                                <a href="/add/${alc.id}"  class="btn btn-success  addToCartBtn mt-26 ">В корзину</a>
+                                <button ng-click="addOne()"  class="btn  addToCartBtn mt-26 ">В корзину</button>
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@
                             <span class="ff-tah price-theme mb-20 va-m">{{item.price}}грн</span>
                                 </span>
                                     <span class="d-inline-block col-xs-6 col-md-6   text-center">
-                            <button class="btn  addToCartBtn mt-26 " ng-click="addToCart()">В корзину</button>
+                            <button class="btn  addToCartBtn mt-26 " ng-disabled="isAlcEnabled" ng-click="addToCart()">В корзину</button>
                                         <%--<a href="/add/${alc.id}" class="btn btn-success  addToCartBtn mt-26 ">В корзину</a>--%>
                                 </span>
                                 </div>
@@ -65,10 +65,9 @@
 
 
 
-        <div class="container">
+        <div class="container mt-57">
             <div class="section-heading text-center">
-                <h2>Unlimited Features, Unlimited Fun</h2>
-                <p class="text-muted">Check out what you can do with this app theme!</p>
+                <h2>Алкоголь з Duty-free</h2>
                 <hr>
             </div>
             <div class="row">
@@ -90,20 +89,23 @@
                 <div class="col-lg-8 my-auto">
                     <div class="container-fluid">
                         <div class="row">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci aliquam architecto asperiores aspernatur commodi consectetur cumque, deserunt eaque facere fugit harum id incidunt iusto laborum, libero mollitia obcaecati officia officiis omnis optio quaerat quas rem repellendus sapiente similique tempora? Accusamus ad autem eligendi mollitia quis! Accusamus autem, consequatur corporis debitis deserunt distinctio dolorum ea eaque earum, eos eum exercitationem hic illum itaque laboriosam laudantium maxime minima minus modi non, nulla officiis quibusdam quo rem rerum sunt voluptates! A, aperiam beatae cum eveniet ex expedita id ipsum laboriosam laudantium minima minus mollitia nisi odit porro repudiandae suscipit veniam, voluptatem.
+                            В нашем интернет-магазине элитного алкоголь из Дьюти Фри
+                            Вы найдете широчайший выбор спиртных напитков со всех уголков мира: Вы сможете легко купить онлайн от коньяков до всех сортов виски (молты, односолодовые, с выдержкой от 10 до 18 лет, дешевые и дорогие, в тубе и без), множество подарочных наборов, ну и, конечно же, шампанское и хорошая водка. На нашем сайте Алкостор ком юа легко можно подобрать
+                            элитный алкоголь в подарок  по любой цене, а мы  в свою очередь гарантируем качество алкогольных напитков, а также своевременную доставку. У нас представленные
+                            недорогие крепкие спиртные напитки  на любой вкус и цену которую может позволит себе каждый клиент.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal" id="modal"  ng-controller="mainViewCtrl">
+        <div class="modal" id="modal"  >
             <div class="modal-content">
                 <div class="white container hg-100 wd-100 mt-87">
                     <div class="container" ng-show="cartView=='cart'">
                         <div class="cartContainer " >
                             <%--<c:forEach items="${listCart}" var="item">--%>
-                            <div class="row b-btm mt-20" ng-repeat="item in cartItems" >
+                            <div class="row b-btm mt-20" ng-repeat="item in cartItems track by $index" >
                                 <div class="col-sm-2 text-center">
                                     <span name="name" id="name">{{item.name}}</span>
                                 </div>

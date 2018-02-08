@@ -28,6 +28,11 @@ public class ClientServiceImpl implements ClientService {
         return clientDAO.findBySessionId(sessionId);
     }
 
+    @Override
+    public void deleteAllBySessionId(String sessionId) {
+        clientDAO.deleteAllBySessionId(sessionId);
+    }
+
 //    @Override
 //    public List<Client> findAllWithOrders() {
 //        return clientDAO.findAllWithOrder();

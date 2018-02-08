@@ -1,18 +1,19 @@
 package menu.app.controller;
 
+import menu.app.dto.AlcoDTO;
 import menu.app.dto.CartClientDTO;
-import menu.app.entity.Alcogol;
-import menu.app.entity.Cart;
-import menu.app.entity.Category;
-import menu.app.entity.Orders;
+import menu.app.entity.*;
 import menu.app.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,13 +29,24 @@ public class RestAPIController {
     CartService cartService;
     @Autowired
     OrdersService ordersService;
+    @Autowired
+    ClientService clientService;
 
 
+
+    @GetMapping("/findCities")
+    public @ResponseBody List<City> findCities(){
+        System.out.println("hi");
+        System.out.println(cityService.findAllByCityName("львів"));
+        return cityService.findAllByCityName("львів");
+    }
 
 
     @GetMapping("/showItems")
-    public @ResponseBody List<Alcogol> showingPage(){
-        return alcoService.findAll();
+    public @ResponseBody List<AlcoDTO> showingPage(){
+        List<AlcoDTO> alcoDTOList = dtoAdding(alcoService.findAllWithCategories());
+        return alcoDTOList;
+
     }
 
     @GetMapping("/addProduct")
@@ -49,32 +61,9 @@ public class RestAPIController {
 //    }
 
     @GetMapping("/showOrders")
-    public List<CartClientDTO> showOrders(Model model)
+    public List<CartClientDTO> showOrders()
     {
-        Cart cart = new Cart();
-        cart.setSessionId("asd");
-        List<Cart> cartList = cartService.findAllCartsWithOrder();
-        List<CartClientDTO> dtoList = new ArrayList<>();
-        for (Cart order : cartList) {
-            CartClientDTO dto = new CartClientDTO();
-            if (!cart.getSessionId().equals(order.getSessionId())){
-                dto.setSessionId(order.getSessionId());
-                dto.setClientId(order.getOrder().getClient().getId());
-                dto.setClientName(order.getOrder().getClient().getName());
-                dto.setLastName(order.getOrder().getClient().getLastName());
-                dto.setAddress(order.getOrder().getClient().getAddress());
-                dto.setEmail(order.getOrder().getClient().getEmail());
-                dto.setNumber(order.getOrder().getClient().getNumber());
-                dto.setCityName(order.getOrder().getClient().getCity().getCityName().toLowerCase());
-                dto.setCartList(cartService.findAllBySessionId(order.getSessionId()));
-                dtoList.add(dto);
-            }
-
-            cart=order;
-        }
-        System.out.println(dtoList);
-        model.addAttribute("orders",dtoList);
-
+        List<CartClientDTO> dtoList = cartDtoAdding(cartService.findAllCartsWithOrder());
         return dtoList;
     }
 
@@ -92,12 +81,83 @@ public class RestAPIController {
 
     }
 
+    @PostMapping("/addCategory")
+    public void saveCategory(@RequestBody String category){
+        Category category1= new Category(category);
+        categoryService.save(category1);
+    }
+
+
+    @PostMapping("/editItem")
+    @Transactional
+    public List<AlcoDTO> editItem(@RequestBody AlcoDTO alcogol
+            ){
+        alcoService.updateItem(alcogol.getId(), alcogol.getName(), alcogol.getPrice(), alcogol.getStock(), alcogol.getStatus(), alcogol.getDescription());
+        return dtoAdding(alcoService.findAllWithCategories());
+    }
+
+
+    @PostMapping("/deleteItem")
+    @Transactional
+    public List<AlcoDTO> deleteItem(@RequestBody int id){
+        alcoService.removeItem(id);
+        return dtoAdding(alcoService.findAllWithCategories());
+    }
+
+    @PostMapping("/sendOrder")
+    @Transactional
+    public List<CartClientDTO> sendOrder(@RequestBody String sessionId){
+        cartService.deleteAllBySessionId(sessionId);
+        ordersService.deleteAllBySessionId(sessionId);
+        clientService.deleteAllBySessionId(sessionId);
+        return cartDtoAdding(cartService.findAllCartsWithOrder());
+    }
 
 
 
+    public List<CartClientDTO> cartDtoAdding(List<Cart> cartList){
+        Cart cart = new Cart();
+        cart.setSessionId("asd");
+        List<CartClientDTO> dtoList = new ArrayList<>();
+        for (Cart order : cartList) {
+            CartClientDTO dto = new CartClientDTO();
+            if (!cart.getSessionId().equals(order.getSessionId())){
+                dto.setSessionId(order.getSessionId());
+                dto.setClientId(order.getOrder().getClient().getId());
+                dto.setClientName(order.getOrder().getClient().getName());
+                dto.setLastName(order.getOrder().getClient().getLastName());
+                dto.setAddress(order.getOrder().getClient().getAddress());
+                dto.setEmail(order.getOrder().getClient().getEmail());
+                dto.setNumber(order.getOrder().getClient().getNumber());
+                dto.setCityName(order.getOrder().getClient().getCity().getCityName().toLowerCase());
+                dto.setCartList(cartService.findAllBySessionId(order.getSessionId()));
+                dtoList.add(dto);
+            }
+            cart=order;
+
+        }
+
+        return dtoList;
+    }
 
 
-
+    public List<AlcoDTO> dtoAdding(List<Alcogol> alcogolList){
+        List<AlcoDTO> alcoDTOList = new ArrayList<>();
+        for (Alcogol alcogol : alcogolList) {
+            AlcoDTO alcoDTO = new AlcoDTO();
+            alcoDTO.setId(alcogol.getId());
+            alcoDTO.setCategory(alcogol.getCategory().getName());
+            alcoDTO.setCatId(alcogol.getCategory().getId());
+            alcoDTO.setDescription(alcogol.getDescription());
+            alcoDTO.setName(alcogol.getName());
+            alcoDTO.setPic(alcogol.getPic());
+            alcoDTO.setPrice(alcogol.getPrice());
+            alcoDTO.setStatus(alcogol.getStatus());
+            alcoDTO.setStock(alcogol.getStock());
+            alcoDTOList.add(alcoDTO);
+        }
+        return alcoDTOList;
+    }
 
 
 

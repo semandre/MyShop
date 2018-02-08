@@ -34,4 +34,9 @@ public class OrdersServiceImpl implements OrdersService{
     public void updateClient(String sessionId, Client client) {
         ordersDao.updateClient(sessionId,client);
     }
+
+    @Override
+    public void deleteAllBySessionId(String sessionId) {
+        ordersDao.deleteAllBySessionId(sessionId);
+    }
 }

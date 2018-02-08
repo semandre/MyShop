@@ -18,4 +18,5 @@ public interface ClientDAO extends JpaRepository<Client,Integer> {
 
 //    @Query("from Client c join fetch c.order o join fetch o.cart ca join fetch c.city ci")
 //    List<Client> findAllWithOrder();
+    void deleteAllBySessionId(@Param("sessionId") String sessionId);
 }

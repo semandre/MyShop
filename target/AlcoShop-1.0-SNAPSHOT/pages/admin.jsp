@@ -11,7 +11,7 @@
 <div class="white container hg-100 wd-100 mt-87">
     <div class="container">
             <div class="adminHead">
-                <h2>Вітаю на сторінці Адміністратора</h2>
+                <h1>Вітаю на сторінці Адміністратора</h1>
             </div>
             <div class="row" ng-controller="adminsViewCtrl">
                 <div class="col-md-2 mt-20">
@@ -19,6 +19,7 @@
                        <li> <button ng-click="showProducts()" class="adminsBtn">Усі продукти</button> </li>
                        <li> <button ng-click="addProduct()" class="adminsBtn">Додати товар</button>
                           </li>
+                       <li> <button ng-click="addCategory()" class="adminsBtn">Додати категорію</button></li>
                        <li> <button ng-click="showOrders()" class="adminsBtn">Показати замовлення</button></li>
 
                    </ul>
@@ -26,19 +27,26 @@
                 <div class="col-md-10 text-center mt-20" >
                     <div ng-show="currentView=='none'">
                         <span class="non-used">Виберіть дію з пункту меню</span>
-                        <form action="/find" method="post">
-                            <input type="text" name="cityName">
-                            <input type="submit" value="find">
-                        </form>
-                        <c:forEach items="${cityName}" var="name">
-                            <p>${name}</p>
-                        </c:forEach>
+
                     </div>
                     <ng-include src="'/pages/editPage.jsp'" ng-show="currentView=='edit'"></ng-include>
                     <ng-include src="'/pages/allProducts.jsp'" ng-show="currentView=='products'"></ng-include>
                     <ng-include src="'/pages/addProduct.jsp'" ng-show="currentView=='add'"></ng-include>
                     <ng-include src="'/pages/showOrders.jsp'" ng-show="currentView=='orders'"></ng-include>
 
+                    <div class="hg-100 wd-100 mb-20" ng-show="currentView=='category'">
+                        <span class="non-used">Тут ви можете добавити свою категорію продукту</span>
+                        <form ng-submit="addNewCategory(category)">
+                            <div class="row ">
+                                <div class="col-sm-8 mt-57">
+                                    <input type="text" ng-model="category" class="inputSize" placeholder="Введіть категорію(напр : Пиво)">
+                                </div>
+                                <div class="col-sm-4 mt-57">
+                                    <button type="submit" class="btn addProdBtn" >Додати</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 

@@ -48,7 +48,7 @@ public class AlcoController {
     }
     @GetMapping("/viewProduct/{id}")
     public String viewProduct(@PathVariable int id, Model model){
-        Alcogol alcogol = alcoService.findAllWithCategory(id);
+        Alcogol alcogol = alcoService.findWithCategory(id);
         model.addAttribute("alcogol", alcogol);
         System.out.println(alcogol);
         return "viewProduct";
@@ -63,11 +63,6 @@ public class AlcoController {
     }
 
 
-    @PostMapping("/saveCategory")
-    public String saveCategory(@RequestBody Category category){
-        System.out.println(category);
-        categoryService.save(category);
-        return "redirect:/admin";
-    }
+
 
 }

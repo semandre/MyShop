@@ -16,4 +16,6 @@ public interface OrdersDao extends JpaRepository<Orders,Integer>{
     @Modifying
     void updateClient(@Param("sessionId")String sessionId, @Param("client")Client client);
 
+    void deleteAllBySessionId(@Param("sessionId") String sessionId);
+
 }

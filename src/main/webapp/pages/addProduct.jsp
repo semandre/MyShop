@@ -75,10 +75,10 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-sm-6 ">
-                                        <span class="radioSize">В наявності</span><input type="radio" name="status" value="enabled" class="ml-30" required>
+                                        <span class="radioSize">В наявності</span><input type="radio" name="status" value="В наявності" class="ml-30" required>
                                     </div>
                                     <div class="col-sm-6">
-                                        <span class="radioSize">Відсутній</span><input type="radio" name="status" value="disabled" class="ml-30" required>
+                                        <span class="radioSize">Відсутній</span><input type="radio" name="status" value="Закінчився" class="ml-30" required>
                                     </div>
                                 </div>
                             </div>

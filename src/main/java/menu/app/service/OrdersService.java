@@ -12,5 +12,5 @@ public interface OrdersService {
     Orders findOne(String sessionId);
     List<Orders> findAll();
     void updateClient(String sessionId, Client client);
-
+    void deleteAllBySessionId(String sessionId);
 }
