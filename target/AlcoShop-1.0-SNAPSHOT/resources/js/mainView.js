@@ -10,10 +10,17 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
    var cartItems= $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
     $scope.cartItems.length>0 ? $scope.isEmpty=false : $scope.isEmpty=true;
     $scope.focused=false;
-    $scope.focused ? $scope.addClass='' : $scope.addClass='none';
+
+    $scope.focus=function () {
+        $scope.focused=true;
+    };
+    $scope.blur=function () {
+        $scope.focused=false;
+    };
+    setTimeout($scope.blur,2000);
     $http.get('/findCities').success(function (data) {
-        console.log(data);
-        $scope.cities=[{cityName:"львів"},{cityName:"тернопіль"}];
+        $scope.cities=data;
+            // [{cityName:"львів"},{cityName:"тернопіль"}];
     });
 
 
@@ -21,7 +28,8 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
 
     $scope.checkout=function () {
         $scope.cartView='order';
-       $http.post('/checkout',cartItems);
+        console.log(cartItems);
+       $http.post('/checkout',$scope.cartItems);
        localStorage.removeItem('cartItems');
     };
 
@@ -91,7 +99,7 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
                }
                cart.quantity=cQuant;
            }
-       })
+       });
        localStorage.setItem('cartItems',JSON.stringify($scope.cartItems));
    };
 
@@ -177,6 +185,17 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
     $scope.addNewCategory=function (category) {
         console.log(category);
         $http.post('/addCategory',category);
+    };
+
+    $scope.addCity=function () {
+        $scope.currentView="city";
+    };
+    $scope.addNewCity=function (city) {
+        console.log(city);
+        $http.post('/addCity',city).success(function (data) {
+            console.log(data.message);
+            $scope.msg=data.message;
+        });
     };
 
 

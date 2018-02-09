@@ -357,6 +357,7 @@ input[type="file"]{
     width: 100%;
     overflow: hidden;
     border: none;
+    z-index: 9999;
 }
 .searchSelect:focus{
     width: 100%;

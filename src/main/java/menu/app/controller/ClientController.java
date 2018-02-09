@@ -39,12 +39,14 @@ public class ClientController {
                            @RequestParam String lastName,
                            @RequestParam String email,
                            @RequestParam String address,
-                           @RequestParam int number, HttpSession session){
+                           @RequestParam int number,
+                           @RequestParam String cityName,
+                           HttpSession session){
         List<Cart> cartList = cartService.findAllBySessionId(session.getId());
         String status="В наявності";
         Client client = new Client(session.getId(),name,lastName,email,address,number);
-        System.out.println(client);
-        client.setCity(cityService.findByCityName());
+        City city = cityService.findByCityName(cityName);
+        client.setCity(city);
         clientService.save(client);
         ordersService.updateClient(session.getId(),clientService.findBySessionId(session.getId()));
         for (Cart cart : cartList) {
@@ -88,6 +90,31 @@ public class ClientController {
 //            e.printStackTrace();
 //        }
 //        alcoService.updateItem(8, name, price, stock, status, description, "\\productPic\\"+pic.getOriginalFilename());
+//        return "admin";
+//    }
+
+
+//    @PostMapping("/addCity")
+//    public String saveCity(@RequestParam String cityName){
+//        boolean b = true;
+//        String message="Місто успішно додане";
+//        City city1 = new City(cityName);
+//        List<City> all = cityService.findAllBy();
+//        System.out.println(all);
+//        for (City city2 : all) {
+//            if (city1.getCityName().equals(city2.getCityName())){
+//                b=false;
+//                System.out.println("1");
+//                message="Місто з таким іменем уже добавлене";
+//            }
+//        }
+//        if (b){
+//            System.out.println("2");
+//            cityService.save(city1);
+//            System.out.println("3");
+//
+//        }
+//        System.out.println(message);
 //        return "admin";
 //    }
 

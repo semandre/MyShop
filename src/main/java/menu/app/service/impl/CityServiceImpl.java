@@ -5,6 +5,7 @@ import menu.app.dao.CityDao;
 import menu.app.entity.City;
 import menu.app.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class CityServiceImpl implements CityService {
     CityDao cityDao;
 
     @Override
-    public City findByCityName() {
-        return cityDao.findByCityName();
+    public City findByCityName(String cityName) {
+        return cityDao.findByCityName(cityName);
     }
 
     @Override
@@ -28,6 +29,16 @@ public class CityServiceImpl implements CityService {
     @Override
     public List<City> findAll() {
         return null;
+    }
+
+    @Override
+    public List<City> findAllBy() {
+       return cityDao.findAllBy(new PageRequest(0,100000));
+    }
+
+    @Override
+    public void save(City city) {
+        cityDao.save(city);
     }
 
 }

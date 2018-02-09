@@ -35,7 +35,7 @@
                                                <span><b>Ціна:</b> {{list.price*list.quantity}} грн</span>
 
                                            </div>
-                                           <button class="btn btn-success addToCartBtn" ng-click="sendOrder(order)">Відправити</button>
+                                           <button class="btn addToCartBtn" ng-click="sendOrder(order)">Відправити</button>
                                        </div>
 
                                </div>

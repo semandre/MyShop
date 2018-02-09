@@ -20,17 +20,15 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private long code;
-    private String shortCut;
+
     @Column(columnDefinition = "TEXT")
     private String cityName;
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "city")
     private List<Client> clients;
 
-    public City(int code, String shortCut, String cityName) {
-        this.code = code;
-        this.shortCut = shortCut;
+    public City(String cityName) {
+
         this.cityName = cityName;
     }
 

@@ -14,8 +14,8 @@
 <input type="text" name="name" placeholder="Ім'я" class="inputForm" required><br>
 <input type="text" name="lastName" placeholder="Прізвище" class="inputForm" required><br>
 <input type="email" name="email" placeholder="e-mail" class="inputForm" required><br>
-    <input type="text" class="inputForm" name="cityName" ng-model="test"  autocomplete="off" required ng-focus="focused" placeholder="Введіть місто">
-    <select size="5" ng-model="test" class="searchSelect" ng-class="addClass" >
+    <input type="text" class="inputForm" name="cityName" ng-model="test"  autocomplete="off" required ng-focus="focus()"  placeholder="Введіть місто">
+    <select size="5" ng-model="test" class="searchSelect" ng-show="focused" >
         <option ng-repeat="city in cities | filter:test" value="{{city.cityName}}"  >{{city.cityName}}</option>
     </select>
 <input type="text" name="address" placeholder="Адреса" class="inputForm" required><br>

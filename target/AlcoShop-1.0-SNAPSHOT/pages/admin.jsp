@@ -20,6 +20,7 @@
                        <li> <button ng-click="addProduct()" class="adminsBtn">Додати товар</button>
                           </li>
                        <li> <button ng-click="addCategory()" class="adminsBtn">Додати категорію</button></li>
+                       <li> <button ng-click="addCity()" class="adminsBtn">Додати місто</button></li>
                        <li> <button ng-click="showOrders()" class="adminsBtn">Показати замовлення</button></li>
 
                    </ul>
@@ -40,6 +41,21 @@
                             <div class="row ">
                                 <div class="col-sm-8 mt-57">
                                     <input type="text" ng-model="category" class="inputSize" placeholder="Введіть категорію(напр : Пиво)">
+                                </div>
+                                <div class="col-sm-4 mt-57">
+                                    <button type="submit" class="btn addProdBtn" >Додати</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="hg-100 wd-100 mb-20" ng-show="currentView=='city'">
+                        <span class="non-used">Тут ви можете добавити місто для відправки продуктів</span>
+                        <form  ng-submit="addNewCity(city)">
+                            <div class="row ">
+                                <div class="col-sm-8 mt-57">
+                                    <input type="text" ng-model="city" class="inputSize" placeholder="Введіть назву міста">
+                                    <span>{{msg}}</span>
                                 </div>
                                 <div class="col-sm-4 mt-57">
                                     <button type="submit" class="btn addProdBtn" >Додати</button>

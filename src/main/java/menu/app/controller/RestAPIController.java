@@ -1,5 +1,6 @@
 package menu.app.controller;
 
+import menu.app.additional.Message;
 import menu.app.dto.AlcoDTO;
 import menu.app.dto.CartClientDTO;
 import menu.app.entity.*;
@@ -36,9 +37,7 @@ public class RestAPIController {
 
     @GetMapping("/findCities")
     public @ResponseBody List<City> findCities(){
-        System.out.println("hi");
-        System.out.println(cityService.findAllByCityName("львів"));
-        return cityService.findAllByCityName("львів");
+        return cityService.findAllBy();
     }
 
 
@@ -70,6 +69,7 @@ public class RestAPIController {
     @PostMapping("/checkout")
     @Transactional
     public void checkout(@RequestBody List<Cart> cartItems, HttpSession session){
+        System.out.println(cartItems);
         Orders orders=saveOrder(session);
         ordersService.save(orders);
         for (Cart cartItem : cartItems) {
@@ -85,6 +85,29 @@ public class RestAPIController {
     public void saveCategory(@RequestBody String category){
         Category category1= new Category(category);
         categoryService.save(category1);
+    }
+
+    @PostMapping("/addCity")
+    public Message saveCity(@RequestBody String cityName){
+        boolean b = true;
+        String message="Місто успішно додане";
+        City city1 = new City(cityName);
+        List<City> all = cityService.findAllBy();
+        for (City city2 : all) {
+            if (city1.getCityName().toLowerCase().equals(city2.getCityName().toLowerCase())){
+                b=false;
+                System.out.println("1");
+                message="Місто з таким іменем уже добавлене";
+            }
+        }
+        if (b){
+            System.out.println("2");
+            cityService.save(city1);
+            System.out.println("3");
+
+        }
+        System.out.println(message);
+        return new Message(message);
     }
 
 
