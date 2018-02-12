@@ -31,6 +31,8 @@ public class ClientController {
     OrdersService ordersService;
     @Autowired
     AlcoService alcoService;
+    @Autowired
+    CategoryService categoryService;
 
 
     @PostMapping("/order")
@@ -51,12 +53,13 @@ public class ClientController {
         ordersService.updateClient(session.getId(),clientService.findBySessionId(session.getId()));
         for (Cart cart : cartList) {
             Alcogol byName = alcoService.findByName(cart.getName());
-            int rizn = (byName.getStock() - cart.getQuantity());
+            double rizn = (byName.getStock() - cart.getQuantity());
             if (rizn<=0){
                 status="Закінчився";
             }
+            double popularity=byName.getPopularity()+cart.getQuantity();
 
-            alcoService.updateStockAndStatus(rizn,status,cart.getName());
+            alcoService.updateStockAndStatus(rizn,status,popularity,cart.getName());
 
         }
         return "redirect:/";
@@ -69,54 +72,28 @@ public class ClientController {
     public String allCitiesWithCityName(@RequestParam String cityName,Model model){
         List<City> allByCityName = cityService.findAllByCityName(cityName);
         model.addAttribute("cityName",allByCityName);
-        System.out.println(allByCityName);
         return "admin";
     }
 
-//    @PostMapping("/editItem")
-//    @Transactional
-//    public String editItem(
-//                           @RequestParam String name,
-//                           @RequestParam double price,
-//                           @RequestParam int stock,
-//                           @RequestParam String status,
-//                           @RequestParam String description,
-//                           @RequestParam MultipartFile pic){
-//        System.out.println("hi");
-//        String path=System.getProperty("user.home")+ File.separator+"products\\";
-//        try {
-//            pic.transferTo(new File(path+pic.getOriginalFilename()));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        alcoService.updateItem(8, name, price, stock, status, description, "\\productPic\\"+pic.getOriginalFilename());
-//        return "admin";
-//    }
+    @PostMapping("/editItem")
+    @Transactional
+    public String editItem(
+                            @RequestParam int id,
+                           @RequestParam String name,
+                           @RequestParam double price,
+                           @RequestParam int stock,
+                           @RequestParam String status,
+                           @RequestParam String description,
+                           @RequestParam String category,
+                            @RequestParam double packaging
+                           ){
+
+        alcoService.updateItem(id,name,price,stock,status,description,categoryService.findOne(category),packaging);
+        return "admin";
+    }
 
 
-//    @PostMapping("/addCity")
-//    public String saveCity(@RequestParam String cityName){
-//        boolean b = true;
-//        String message="Місто успішно додане";
-//        City city1 = new City(cityName);
-//        List<City> all = cityService.findAllBy();
-//        System.out.println(all);
-//        for (City city2 : all) {
-//            if (city1.getCityName().equals(city2.getCityName())){
-//                b=false;
-//                System.out.println("1");
-//                message="Місто з таким іменем уже добавлене";
-//            }
-//        }
-//        if (b){
-//            System.out.println("2");
-//            cityService.save(city1);
-//            System.out.println("3");
-//
-//        }
-//        System.out.println(message);
-//        return "admin";
-//    }
+
 
 
 }

@@ -6,6 +6,9 @@
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
+button:hover{
+    background-color: #3F3F3F;
+}
 
 .addToCartBtn{
     width: 98px;
@@ -15,16 +18,30 @@
     background-color: #FF7902;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     color: white;
+    cursor: pointer;
 }
-.addToCartBtn:hover{
-    background-color: #FF7902;
-}
+
 .addToCartBtn:active{
     outline:none;
 }
+.reloadBtn{
+    width: 270px;
+    background-color: #FF7902;
+    font-size: 17px;
+    padding: 10px 0;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 4%;
+}
+.reloadBtn:hover{
+    background-color: #3F3F3F;
+
+}
 .prod-img{
     margin: 0 auto;
-    background-color: red;
     min-height: 200px;
     width: 150px;
     /*margin: 0 20px;*/
@@ -100,6 +117,9 @@ margin-top: 87px;
 .pt-20{
     padding-top: 20px ;
 }
+.pt-100{
+    padding-top: 100px;
+}
 .vertical-padding-20{
     padding: 20px 0;
 }
@@ -109,6 +129,12 @@ margin-top: 87px;
 }
 .b-btm{
     border-bottom: solid 2px grey;
+}
+.b-btm-dotted>div:nth-last-child(n+2){
+    border-bottom: dotted 2px rgba(63,63,63,0.2) ;
+}
+.b-btm-dotted>div:nth-child(n+2){
+    padding-top: 20px;
 }
 
 .p-price{
@@ -192,9 +218,13 @@ a:hover{
 
 
 .category{
-
+    outline: none;
+    border: none;
     text-align: center;
     font-size: 20px;
+}
+.category:hover{
+    color: white;
 }
 .sortHeader{
     color: #ACAC89;
@@ -255,6 +285,7 @@ a:hover{
     background-color: #FF7902;
     font-size: 14px;
     border: none;
+    cursor: pointer;
 }
 .adminsBtn:hover{
     color: white;
@@ -271,6 +302,7 @@ a:hover{
     padding: 10px 0;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     color: white;
+    cursor: pointer;
 }
 
 .inputSize{

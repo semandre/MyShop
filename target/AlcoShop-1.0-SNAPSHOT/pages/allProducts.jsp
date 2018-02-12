@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class=" hg-100 wd-100 mb-20">
     <div class="container">
-        <div class="cartContainer pt-20 b-btm"  >
-                <div class="row" ng-repeat="item in items">
+        <div class="cartContainer pt-20 b-btm b-btm-dotted"  >
+                <div class="row " ng-repeat="item in items">
                     <div class="col-sm-2 text-center">
                         <span name="name" id="name">{{item.name}}</span>
                     </div>

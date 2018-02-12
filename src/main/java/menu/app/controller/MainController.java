@@ -17,35 +17,12 @@ import java.util.List;
 
 @Controller
 public class MainController {
-@Autowired
-    AlcoService alcoService;
-@Autowired
-    CartService cartService;
-@Autowired
-    CategoryService categoryService;
 
-//    @GetMapping("/")
-//    public String startPage(){
-//        return "header";
-//    }
-@GetMapping("/cart")
-public String cart(Model model, HttpSession session) {
-    double total =0;
-    List<Cart> allBySessionId = cartService.findAllBySessionId(session.getId());
-    for (Cart cart : allBySessionId) {
-         total = total +(cart.getQuantity()*cart.getPrice());
-    }
-    session.setAttribute("cart",allBySessionId);
 
-    model.addAttribute("total",total);
-    model.addAttribute("listCart",session.getAttribute("cart"));
-    return "cart";
-}
 
 @GetMapping("/")
-public String mainPage(Model model){
-    model.addAttribute("alcogol",alcoService.findAll());
-    model.addAttribute("category",categoryService.findAll());
+public String mainPage(){
+
     return "main";
 }
 

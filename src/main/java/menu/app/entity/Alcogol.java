@@ -15,8 +15,10 @@ public class Alcogol {
     private double price;
     @Column(columnDefinition="TEXT")
     private String description;
-    private int stock;
+    private double packing;
+    private double stock;
     private String status;
+    private double popularity;
     private String pic;
 
     @JsonIgnore
@@ -26,12 +28,15 @@ public class Alcogol {
     public Alcogol() {
     }
 
-    public Alcogol(String name, double price, String description, int stock, String status) {
+    public Alcogol(String name, double price, String description, double packing, int stock, String status, int popularity) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.packing = packing;
         this.stock = stock;
         this.status = status;
+        this.popularity = popularity;
+
     }
 
     public int getId() {
@@ -66,7 +71,7 @@ public class Alcogol {
         this.description = description;
     }
 
-    public int getStock() {
+    public double getStock() {
         return stock;
     }
 
@@ -98,6 +103,22 @@ public class Alcogol {
         this.category = category;
     }
 
+    public double getPacking() {
+        return packing;
+    }
+
+    public void setPacking(double packing) {
+        this.packing = packing;
+    }
+
+    public double getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(int popularity) {
+        this.popularity = popularity;
+    }
+
     @Override
     public String toString() {
         return "Alcogol{" +
@@ -105,9 +126,12 @@ public class Alcogol {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
+                ", packing=" + packing +
                 ", stock=" + stock +
                 ", status='" + status + '\'' +
+                ", popularity=" + popularity +
                 ", pic='" + pic + '\'' +
+                ", category=" + category +
                 '}';
     }
 }

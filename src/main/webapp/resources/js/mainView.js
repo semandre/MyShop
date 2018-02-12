@@ -2,6 +2,8 @@ var mainView =angular.module("mainView",[]);
 
 
 // ------------------------------- MAIN VIEW --------------------------------
+
+// [{cityName:"львів"},{cityName:"тернопіль"}];
 mainView.controller("mainViewCtrl",function ($scope,$http) {
     $scope.cartView='cart';
     // $scope.isEmpty=true;
@@ -10,6 +12,29 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
     $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
     $scope.cartItems.length>0 ? $scope.isEmpty=false : $scope.isEmpty=true;
     $scope.focused=false;
+    $scope.limitValue=3;
+    // $scope.buttonVisible=true;
+    $scope.usingItems=[];
+
+
+    $scope.countValue=function () {
+        let result = $scope.usingItems.length-$scope.limitValue;
+        if (result<0){
+            result=0;
+        }
+        return result;
+    };
+
+    $scope.usingItems.length-$scope.limitValue===0? $scope.buttonVisible=false:$scope.buttonVisible=true;
+    console.log($scope.usingItems.length-$scope.limitValue);
+    console.log($scope.buttonVisible);
+
+    $scope.uploadItems=function () {
+        $scope.limitValue=$scope.limitValue+3;
+        if ($scope.limitValue>=$scope.usingItems.length){
+            $scope.buttonVisible=false;
+        }
+    };
 
     $scope.focus=function () {
         $scope.focused=true;
@@ -20,7 +45,6 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
     setTimeout($scope.blur,2000);
     $http.get('/findCities').success(function (data) {
         $scope.cities=data;
-            // [{cityName:"львів"},{cityName:"тернопіль"}];
     });
 
 
@@ -28,24 +52,26 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
 
     $scope.checkout=function () {
         $scope.cartView='order';
-        console.log(cartItems);
-       $http.post('/checkout',$scope.cartItems);
-       localStorage.removeItem('cartItems');
+        $http.post('/checkout',$scope.cartItems);
+        localStorage.removeItem('cartItems');
     };
 
 
 
    var showItems = $http.get('/showItems');
-   showItems.success(function (data) {
-
+    showItems.success(function (data) {
        $scope.items=data;
-       angular.forEach($scope.items,function (cart) {
-           $scope.isAlcEnabled=false;
-           console.log(cart);
-           if (cart.status==='disabled') {
-               // $scope.isAlcEnabled=true;
-           }
-       });
+       // angular.forEach($scope.items,function (cart) {
+       //     $scope.isAlcEnabled=false;
+       //     if (cart.status==='disabled') {
+       //         // $scope.isAlcEnabled=true;
+       //     }
+       // });
+        for (var i = 0; i < 3; i++) {
+            $scope.usingItems.push($scope.items[i])
+        }
+        console.log($scope.usingItems)
+
    });
    showItems.error(function (xhr) {
         console.log(xhr.status);
@@ -55,7 +81,9 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
    showCategories.success(function (data) {
        $scope.categories=data;
    });
-   
+
+
+
    $scope.addToCart=function () {
        var b=true;
 
@@ -75,9 +103,8 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
        localStorage.setItem('cartItems',JSON.stringify($scope.cartItems));
        $scope.cartItems=JSON.parse(localStorage.getItem('cartItems')) || [];
         $scope.cartItems.length>0 ? $scope.isEmpty=false : $scope.isEmpty=true;
-       console.log($scope.isEmpty);
    };
-   
+
    $scope.addOne=function () {
        var cartItem=this.item;
        angular.forEach($scope.cartItems,function (cart) {
@@ -88,7 +115,7 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
        });
        localStorage.setItem('cartItems',JSON.stringify($scope.cartItems));
    };
-   
+
    $scope.removeOne=function () {
        var cartItem=this.item;
        angular.forEach($scope.cartItems,function (cart) {
@@ -119,6 +146,16 @@ mainView.controller("mainViewCtrl",function ($scope,$http) {
 
     };
 
+    $scope.sortByCategory=function (id) {
+        var datalist=[];
+        angular.forEach($scope.items,function (item) {
+            if (item.catId===id) {
+                datalist.push(item)
+            }
+        });
+        $scope.usingItems=datalist;
+    }
+
 
 
 });
@@ -133,6 +170,7 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
     $scope.categories=[];
     $scope.orders=[];
     $scope.value='value';
+
 
 
 
@@ -156,12 +194,12 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
 
     $scope.showProducts=function () {
         $scope.currentView="products";
-       var showItems =$http.get("/showItems");
+       var showItems =$http.get("/showAdminItems");
         showItems.success(function (data) {
-            console.log(data);
             $scope.items=data;
         })
     };
+
 
     $scope.addProduct=function () {
         $scope.currentView="add";
@@ -184,7 +222,9 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
 
     $scope.addNewCategory=function (category) {
         console.log(category);
-        $http.post('/addCategory',category);
+        $http.post('/addCategory',category).success(function (data) {
+            $scope.messg=data.message;
+        })
     };
 
     $scope.addCity=function () {
@@ -200,14 +240,7 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
 
 
 
-    $scope.editItem=function (item) {
-        console.log(item);
-        $scope.currentView='products';
-        $http.post('/editItem',item).success(function (data) {
-            console.log(data);
-            $scope.items=data;
-        })
-    };
+
 
     $scope.deleteItem=function (item) {
         console.log(item);
@@ -223,7 +256,7 @@ mainView.controller("adminsViewCtrl",function ($scope,$http) {
             $scope.orders=data;
         })
     }
-    
+
 
 
 });

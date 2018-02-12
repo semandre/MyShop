@@ -31,6 +31,7 @@ public class AlcoController {
                             @RequestParam String description,
                             @RequestParam int stock,
                             @RequestParam String status,
+                            @RequestParam double packaging,
                             @RequestParam MultipartFile pic){
         String path=System.getProperty("user.home")+File.separator+"products\\";
         try {
@@ -38,13 +39,12 @@ public class AlcoController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Alcogol alcogol = new Alcogol(name,price,description,stock,status);
+        Alcogol alcogol = new Alcogol(name,price,description,packaging,stock,status,0);
         Category one = categoryService.findOne(category);
-        System.out.println(one);
         alcogol.setPic("\\productPic\\"+pic.getOriginalFilename());
         alcogol.setCategory(one);
         alcoService.save(alcogol);
-        return "redirect:/";
+        return "redirect:/admin";
     }
     @GetMapping("/viewProduct/{id}")
     public String viewProduct(@PathVariable int id, Model model){

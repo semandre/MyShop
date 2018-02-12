@@ -41,6 +41,7 @@
                             <div class="row ">
                                 <div class="col-sm-8 mt-57">
                                     <input type="text" ng-model="category" class="inputSize" placeholder="Введіть категорію(напр : Пиво)">
+                                    <span>{{messg}}</span>
                                 </div>
                                 <div class="col-sm-4 mt-57">
                                     <button type="submit" class="btn addProdBtn" >Додати</button>

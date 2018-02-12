@@ -2,6 +2,7 @@ package menu.app.service.impl;
 
 import menu.app.dao.AlcoDao;
 import menu.app.entity.Alcogol;
+import menu.app.entity.Category;
 import menu.app.service.AlcoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,12 +56,12 @@ public class AlcoServiceImpl implements AlcoService {
     }
 
     @Override
-    public void updateItem(int id, String name, double price, int stock, String status, String description) {
-        alcoDao.updateItem(id,name,price,stock,status,description);
+    public void updateItem(int id, String name, double price, double stock, String status, String description, Category category,double packaging) {
+        alcoDao.updateItem(id,name,price,stock,status,description,category,packaging);
     }
 
     @Override
-    public void updateStockAndStatus(int stock, String status, String name) {
-        alcoDao.updateStockAndStatus(stock,status,name);
+    public void updateStockAndStatus(double stock, String status,double popularity, String name) {
+        alcoDao.updateStockAndStatusAndPopularity(stock,status,popularity,name);
     }
 }

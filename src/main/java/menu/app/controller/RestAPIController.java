@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -43,10 +44,24 @@ public class RestAPIController {
 
     @GetMapping("/showItems")
     public @ResponseBody List<AlcoDTO> showingPage(){
-        List<AlcoDTO> alcoDTOList = dtoAdding(alcoService.findAllWithCategories());
-        return alcoDTOList;
+        List<Alcogol> alcogolList = alcoService.findAllWithCategories();
+        Iterator<Alcogol> iterator = alcogolList.iterator();
+        while (iterator.hasNext()){
+            Alcogol alcogol = iterator.next();
+            if (alcogol.getStatus().equals("Закінчився")){
+                iterator.remove();
+            }
+        }
+        System.out.println(alcogolList);
+
+        return dtoAdding(alcogolList);
 
     }
+    @GetMapping("/showAdminItems")
+    public @ResponseBody List<AlcoDTO> showingAdminPage(){
+        return dtoAdding(alcoService.findAllWithCategories());
+    }
+
 
     @GetMapping("/addProduct")
     public List<Category> addProduct(){
@@ -69,7 +84,6 @@ public class RestAPIController {
     @PostMapping("/checkout")
     @Transactional
     public void checkout(@RequestBody List<Cart> cartItems, HttpSession session){
-        System.out.println(cartItems);
         Orders orders=saveOrder(session);
         ordersService.save(orders);
         for (Cart cartItem : cartItems) {
@@ -82,9 +96,22 @@ public class RestAPIController {
     }
 
     @PostMapping("/addCategory")
-    public void saveCategory(@RequestBody String category){
+    public Message saveCategory(@RequestBody String category){
         Category category1= new Category(category);
-        categoryService.save(category1);
+        boolean b = true;
+        String message="Категорія успішно додана";
+
+        List<Category> all = categoryService.findAll();
+        for (Category category2 : all) {
+            if (category1.getName().toLowerCase().equals(category2.getName().toLowerCase())){
+                b=false;
+                message="Категорія з таким іменем уже добавлена";
+            }
+        }
+        if (b){
+            categoryService.save(category1);
+        }
+        return new Message(message);
     }
 
     @PostMapping("/addCity")
@@ -96,29 +123,14 @@ public class RestAPIController {
         for (City city2 : all) {
             if (city1.getCityName().toLowerCase().equals(city2.getCityName().toLowerCase())){
                 b=false;
-                System.out.println("1");
                 message="Місто з таким іменем уже добавлене";
             }
         }
         if (b){
-            System.out.println("2");
             cityService.save(city1);
-            System.out.println("3");
-
         }
-        System.out.println(message);
         return new Message(message);
     }
-
-
-    @PostMapping("/editItem")
-    @Transactional
-    public List<AlcoDTO> editItem(@RequestBody AlcoDTO alcogol
-            ){
-        alcoService.updateItem(alcogol.getId(), alcogol.getName(), alcogol.getPrice(), alcogol.getStock(), alcogol.getStatus(), alcogol.getDescription());
-        return dtoAdding(alcoService.findAllWithCategories());
-    }
-
 
     @PostMapping("/deleteItem")
     @Transactional
@@ -126,6 +138,9 @@ public class RestAPIController {
         alcoService.removeItem(id);
         return dtoAdding(alcoService.findAllWithCategories());
     }
+
+
+
 
     @PostMapping("/sendOrder")
     @Transactional
@@ -177,6 +192,8 @@ public class RestAPIController {
             alcoDTO.setPrice(alcogol.getPrice());
             alcoDTO.setStatus(alcogol.getStatus());
             alcoDTO.setStock(alcogol.getStock());
+            alcoDTO.setPackaging(alcogol.getPacking());
+            alcoDTO.setPopularity(alcogol.getPopularity());
             alcoDTOList.add(alcoDTO);
         }
         return alcoDTOList;
@@ -200,4 +217,13 @@ public class RestAPIController {
         }
         return order;
     }
+
+    //    @PostMapping("/editItem")
+//    @Transactional
+//    public List<AlcoDTO> editItem(@RequestBody AlcoDTO alcogol
+//            ){
+//        alcoService.updateItem(alcogol.getId(), alcogol.getName(), alcogol.getPrice(), alcogol.getStock(), alcogol.getStatus(), alcogol.getDescription());
+//        return dtoAdding(alcoService.findAllWithCategories());
+//    }
+
 }

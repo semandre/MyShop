@@ -7,19 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486a403f-b1eb-4721-bc17-0bcbfa932412" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/menu/app/controller/CartController.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/ClientController.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/ClientController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/MainController.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/RestAPIController.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/controller/RestAPIController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/dao/AlcoDao.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/dao/AlcoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/service/AlcoService.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/service/AlcoService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/service/impl/AlcoServiceImpl.class" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/WEB-INF/classes/menu/app/service/impl/AlcoServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/controller/ClientController.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/controller/ClientController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/controller/RestAPIController.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/controller/RestAPIController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/dao/AlcoDao.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/dao/AlcoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/service/AlcoService.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/service/AlcoService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/menu/app/service/impl/AlcoServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/menu/app/service/impl/AlcoServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/dao/CityDao.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/dao/CityDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/entity/City.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/entity/City.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/service/CityService.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/service/CityService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/service/impl/CityServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/service/impl/CityServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/order.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/order.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/showOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/showOrders.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/dropdown.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/dropdown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/order.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/order.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/addProduct.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/addProduct.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/admin.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/admin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/allProducts.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/allProducts.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/editPage.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/editPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/main.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/viewProduct.jsp" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/pages/viewProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/resources/css/styles.css" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/resources/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/resources/js/mainView.js" afterPath="$PROJECT_DIR$/target/AlcoShop-1.0-SNAPSHOT/resources/js/mainView.js" />
     </list>
@@ -37,31 +64,8 @@
       <file leaf-file-name="RestAPIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-              <folding>
-                <element signature="e#1062#1063#0" expanded="true" />
-                <element signature="e#1108#1109#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showOrders.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/showOrders.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="37" column="61" lean-forward="false" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/additional/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="-279">
+              <caret line="195" column="57" lean-forward="false" selection-start-line="195" selection-start-column="57" selection-end-line="195" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -70,19 +74,90 @@
       <file leaf-file-name="ClientController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1855">
-              <caret line="118" column="7" lean-forward="true" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
+            <state relative-caret-position="315">
+              <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.jsp">
+      <file leaf-file-name="AlcoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            <state relative-caret-position="243">
+              <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="35" column="112" lean-forward="false" selection-start-line="35" selection-start-column="112" selection-end-line="35" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new-age.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="226" column="17" lean-forward="false" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dropdown.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/dropdown.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dropdown.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/dropdown.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Alcogol.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1890">
+              <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+              <folding>
+                <element signature="e#2109#2110#0" expanded="true" />
+                <element signature="e#2139#2140#0" expanded="true" />
+                <element signature="e#2185#2186#0" expanded="true" />
+                <element signature="e#2223#2224#0" expanded="true" />
+                <element signature="e#2260#2261#0" expanded="true" />
+                <element signature="e#2293#2294#0" expanded="true" />
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2386#2387#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,55 +165,8 @@
       <file leaf-file-name="mainView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dao/CityDao.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="City.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/City.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/impl/CityServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-              <folding>
-                <element signature="e#702#703#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/CityService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -167,6 +195,12 @@
       <find>ng-controller</find>
       <find>ng</find>
       <find>addCity</find>
+      <find>console</find>
+      <find>Btn</find>
+      <find>syste</find>
+      <find>hover</find>
+      <find>.cate</find>
+      <find>$scope.countValue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,8 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/OrderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/dto/CartClientDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Orders.java" />
@@ -194,24 +226,13 @@
         <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/RController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/footer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Cart.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/CartController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/AjaxCart.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/cart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/new-age.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/CartDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/CartService.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/CartServiceImpl.java" />
@@ -221,19 +242,32 @@
         <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/ClientDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/ClientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/ClientServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/order.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/CityDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/City.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/CityService.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/CityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/additional/Message.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/showOrders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/dropdown.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js" />
       </list>
     </option>
@@ -281,7 +315,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -370,6 +403,27 @@
               <item name="MyShop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyShop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -420,6 +474,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
     </panes>
@@ -690,7 +745,9 @@
       <workItem from="1518105786720" duration="57000" />
       <workItem from="1518107810969" duration="7286000" />
       <workItem from="1518118115902" duration="2585000" />
-      <workItem from="1518176185348" duration="7865000" />
+      <workItem from="1518176185348" duration="8492000" />
+      <workItem from="1518192855266" duration="10181000" />
+      <workItem from="1518428448205" duration="6440000" />
     </task>
     <task id="LOCAL-00001" summary="added fields">
       <created>1512576318743</created>
@@ -738,7 +795,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284874000" />
+    <option name="totallyTimeSpent" value="302122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -762,11 +819,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32608697" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2531983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -832,42 +889,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/modernizr.custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/vendor/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398806">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/adminAjax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="110" column="17" lean-forward="false" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -890,14 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
@@ -910,14 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -953,73 +958,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="32" column="110" lean-forward="false" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="16" column="95" lean-forward="false" selection-start-line="16" selection-start-column="95" selection-end-line="16" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding>
-            <element signature="e#1052#1053#0" expanded="false" />
-            <element signature="e#1086#1087#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/cart.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1518012652152" expanded="false" signature="1293:1304" ph="..." />
+            <marker date="1518185180684" expanded="false" signature="1293:1304" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1027,14 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="113" column="22" lean-forward="false" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="38" column="72" lean-forward="false" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,50 +1053,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="80" column="131" lean-forward="false" selection-start-line="80" selection-start-column="131" selection-end-line="80" selection-end-column="131" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="99" lean-forward="false" selection-start-line="88" selection-start-column="99" selection-end-line="88" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="359" column="17" lean-forward="false" selection-start-line="359" selection-start-column="17" selection-end-line="359" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/order.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="17" column="75" lean-forward="false" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1177,22 +1071,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/impl/CityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
+        <state relative-caret-position="648">
           <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="false" />
+            <element signature="e#729#730#0" expanded="false" />
+            <element signature="e#780#781#0" expanded="false" />
+            <element signature="e#846#847#0" expanded="false" />
+            <element signature="e#895#896#0" expanded="false" />
+            <element signature="e#929#930#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/City.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="594">
           <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
           <folding />
         </state>
@@ -1206,33 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-          <folding>
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1855">
-          <caret line="118" column="7" lean-forward="true" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/additional/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1241,18 +1108,210 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/CartController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/showOrders.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="45">
           <caret line="37" column="61" lean-forward="false" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/allProducts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dao/CategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/viewProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" column="70" lean-forward="false" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dto/AlcoDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="24" column="181" lean-forward="false" selection-start-line="24" selection-start-column="181" selection-end-line="24" selection-end-column="181" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/addProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="57" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/editPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/AlcoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="17" column="138" lean-forward="false" selection-start-line="17" selection-start-column="138" selection-end-line="17" selection-end-column="138" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/service/impl/AlcoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="59" column="84" lean-forward="false" selection-start-line="59" selection-start-column="84" selection-end-line="59" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/dao/AlcoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/entity/Alcogol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+          <folding>
+            <element signature="e#2109#2110#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
+            <element signature="e#2185#2186#0" expanded="true" />
+            <element signature="e#2223#2224#0" expanded="true" />
+            <element signature="e#2260#2261#0" expanded="true" />
+            <element signature="e#2293#2294#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2386#2387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/home_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/RestAPIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="195" column="57" lean-forward="false" selection-start-line="195" selection-start-column="57" selection-end-line="195" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery.cbpFWSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1364574176000" expanded="true" signature="2798:2802" ph="&amp;lt;" />
+            <marker date="1364574176000" expanded="true" signature="2870:2874" ph="&amp;gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/dropdown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/dropdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="226" column="17" lean-forward="false" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/menu/app/controller/AlcoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="35" column="112" lean-forward="false" selection-start-line="35" selection-start-column="112" selection-end-line="35" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/new-age.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/mainView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="351">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding />
         </state>
       </provider>

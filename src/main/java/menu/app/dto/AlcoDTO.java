@@ -14,13 +14,15 @@ public class AlcoDTO {
     private String name;
     private double price;
     private String description;
-    private int stock;
+    private double stock;
     private String status;
     private String pic;
     private int catId;
     private String category;
+    private double packaging;
+    private double popularity;
 
-    public AlcoDTO(int id, String name, double price, String description, int stock, String status, String pic, int catId, String category) {
+    public AlcoDTO(int id, String name, double price, String description, double stock, String status, String pic, int catId, String category, double packaging, double popularity) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -30,5 +32,7 @@ public class AlcoDTO {
         this.pic = pic;
         this.catId = catId;
         this.category = category;
+        this.packaging = packaging;
+        this.popularity = popularity;
     }
 }

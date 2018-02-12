@@ -31,8 +31,10 @@
                         <div class="row mt-20 mb-20">
                             <div class="dropdown">
                                 <button onclick="myFunction()" class="dropbtn ">Категорії</button>
-                                <div id="myDropdown" class="dropdown-content" ng-repeat="category in categories">
-                                        <a href="/{{category.id}}" class="col-lg-12 category mt-2">{{category.name}}</a>
+                                <div id="myDropdown" class="dropdown-content" >
+                                    <div ng-repeat="category in categories track by $index">
+                                        <button ng-click="sortByCategory(category.id)" class="col-lg-12 category">{{category.name}}</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -42,8 +44,8 @@
                 <div class="col-lg-10 my-auto" >
 
                         <div class="row" id="">
-                            <div class="col-lg-4  prod-block mt-20"  ng-repeat="item in items">
-                                <h2 class="text-center"><a href="/viewProduct/{{item.id}}">{{item.name}}</a></h2>
+                            <div class="col-lg-4  prod-block mt-20"  ng-repeat="item in usingItems |orderBy : 'popularity':true | limitTo : limitValue">
+                                <h2 class="text-center"><a href="/viewProduct/{{item.id}}">{{item.name}} ({{item.packaging}})</a></h2>
                                 <div class="prod-img"><img src="{{item.pic}}" alt="img" width="150px" height="200px"></div>
                                 <div class="row">
                                 <span class="d-inline-block col-xs-6 col-md-6 text-center">
@@ -51,13 +53,21 @@
                                 </span>
                                     <span class="d-inline-block col-xs-6 col-md-6   text-center">
                             <button class="btn  addToCartBtn mt-26 " ng-disabled="isAlcEnabled" ng-click="addToCart()">В корзину</button>
-                                        <%--<a href="/add/${alc.id}" class="btn btn-success  addToCartBtn mt-26 ">В корзину</a>--%>
                                 </span>
                                 </div>
 
                             </div>
                         </div>
 
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="text-center pt-100">
+                        <button class=" reloadBtn" ng-click="uploadItems()" ng-show="buttonVisible">
+                            <img src="/resources/img/reload.png"
+                                 alt="reload" height="80px" width="80px"> <span>Переглянути ще ({{countValue()}})</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,7 +100,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             В нашем интернет-магазине элитного алкоголь из Дьюти Фри
-                            Вы найдете широчайший выбор спиртных напитков со всех уголков мира: Вы сможете легко купить онлайн от коньяков до всех сортов виски (молты, односолодовые, с выдержкой от 10 до 18 лет, дешевые и дорогие, в тубе и без), множество подарочных наборов, ну и, конечно же, шампанское и хорошая водка. На нашем сайте Алкостор ком юа легко можно подобрать
+                            Вы найдете широчайший выбор спиртных напитков со всех уголков мира: Вы сможете легко купить онлайн от коньяков до всех сортов виски (молты, односолодовые, с выдержкой от 10 до 18 лет, дешевые и дорогие, в тубе и без), множество подарочных наборов, ну и, конечно же, шампанское и хорошая водка. На нашем сайте  легко можно подобрать
                             элитный алкоголь в подарок  по любой цене, а мы  в свою очередь гарантируем качество алкогольных напитков, а также своевременную доставку. У нас представленные
                             недорогие крепкие спиртные напитки  на любой вкус и цену которую может позволит себе каждый клиент.
                         </div>

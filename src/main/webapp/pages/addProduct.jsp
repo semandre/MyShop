@@ -48,13 +48,22 @@
                             </div>
                         </div>
 
+                        <div class="row mt-20">
+                            <div class="col-md-4 text-center">
+                                <span class="spanSize ">Фасування</span>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" name="packaging" class="inputSize" required placeholder="Введіть об'єм">
+                            </div>
+                        </div>
+
 
                         <div class="row mt-20">
                             <div class="col-md-12 text-center">
                                 <span class="spanSize ">Опис</span>
                             </div>
                             <div class="col-md-12 mt-20">
-                                <input type="text" name="description" class="textArea" required>
+                                <textarea type="text" name="description" class="textArea" required></textarea>
                             </div>
                         </div>
 
@@ -95,7 +104,6 @@
                                 <input type="submit" value="Додати" class="btn  addProdBtn">
                             </div>
                         </div>
-
 
                     </div>
 

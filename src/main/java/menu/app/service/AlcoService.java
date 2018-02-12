@@ -1,6 +1,7 @@
 package menu.app.service;
 
 import menu.app.entity.Alcogol;
+import menu.app.entity.Category;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface AlcoService {
     List<Alcogol> findAllWithCategories();
     void removeItem(int id);
     Alcogol findByName(String name);
-    void updateItem(int id,String name,double price,int stock,String status, String description);
-    void updateStockAndStatus(int stock,String status,String name);
+    void updateItem(int id, String name, double price, double stock, String status, String description, Category category,double packaging);
+    void updateStockAndStatus(double stock,String status,double popularity,String name);
 
 }
